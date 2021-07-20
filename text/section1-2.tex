@@ -72,7 +72,7 @@ titlerule style={black}  }
 
 \begin{document}
 \begin{center}
-  \huge 2019年1月　\par
+  \huge 2021年7月　\par
   \vspace{15mm}
   \huge プログラミング入門（Python） \par
   \vspace{15mm}
@@ -1753,6 +1753,70 @@ SHINCHITOSE
 
 WebAPIではJSONを利用してデータの交換をすることが多いですが、JSONデータをリスト（配列）もしくは辞書（連想配列）として取り扱うことができます。
 
+\section{JSONとpythonの関係}
+
+\subsection{JSON入門}
+JavaScript Object Notation の略であり、
+連想配列とリスト構造のテキストとしての表記法です。
+
+ネットワーク上のデータをAPIで取得する際に利用されることが多く、python上での利用も目立ってきています。
+
+連想配列とはキー・バリュー形式の配列を意味していて配列の添え字の代わりにキーの値を使って値を取り出すことができる仕組みとなります。
+
+JSONでは「{}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
+また「キー値」と格納する「値」を「：」コロンで区切ります。
+
+\begin{pabox}{json-1}
+JSONでは「{}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
+また「キー値」と格納する「値」を「：」コロンで区切ります。
+\begin{codebox}{python8-1.py}
+\begin{listing}{1}
+AKJ⇒旭川空港
+MMB⇒女満別空港
+CTS⇒新千歳空港
+HKD⇒函館空港
+HND⇒東京国際空港   
+\end{listing}
+これらをJSONで記述すると次のようになります。
+\begin{listing}{1}
+{
+ "AKJ":"旭川空港" ,
+ "MMB":"女満別空港" , 
+ "CTS":"新千歳空港" ,
+ "HKD":"函館空港" ,
+ "HND":"東京国際空港"
+}
+\end{listing}
+
+\end{codebox}
+\end{pabox}
+またJSONでは配列（リスト構造）も「[]」角カッコで記述することができます。
+
+[60, 70 ,50 , 80, 100]
+
+\begin{pabox}{json-2}
+2年3組　佐々木君の国社数理英のJSON表記は次のようになります。
+\begin{codebox}{python8-1.py}
+\begin{listing}{1}
+{
+ "class":"2年3組" ,
+ "name":"佐々木" ,
+ "score":[60, 70 ,50 , 80, 100]
+}
+\end{listing}
+
+このJSONデータ変数json\_dataに格納しpythonで参照すると次のようになります。
+\begin{listing}{1}
+json_data["name"] ⇒　"佐々木"
+json_data["score"] ⇒　[60, 70 ,50 , 80, 100]
+json_data["score"][1] ⇒ 70
+\end{listing}
+
+\end{codebox}
+\end{pabox}
+この時json\_dataはdict型（辞書型）となり、json\_data["score"]はlist型となります。
+
+\newpage
 %\subsection{配列の便利な機能（ラムダ式）}
 \section{関数による処理（まとまった手順）}
 \subsection{関数とは？}
@@ -1790,8 +1854,8 @@ def 関数名(引数1,引数2):
 
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
-ファイル名をpython8-1.pyとして保存してください。
-\begin{codebox}{python8-1.py}
+ファイル名をpython9-1.pyとして保存してください。
+\begin{codebox}{python9-1.py}
 \begin{listing}{1}
 def func(x):
     answer = x ** 2 + 2 * 2 + 3
@@ -1830,9 +1894,9 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 作ったプログラムで上記2次方程式の0から4まで整数代入した合計を求めます。
 
-ファイル名をpython8-2.pyとして保存してください。
+ファイル名をpython9-2.pyとして保存してください。
 
-\begin{codebox}{python8-2.py}
+\begin{codebox}{python9-2.py}
 \begin{listing}{1}
 def func1(x):
     answer = x ** 2 + 2 * 2 + 3
@@ -1918,8 +1982,8 @@ NameError: name 'x' is not defined
 \begin{pabox}{scope-1}
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
-ファイル名python8-3.pyで保存してください。
-\begin{codebox}{python8-3.py}
+ファイル名python9-3.pyで保存してください。
+\begin{codebox}{python9-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
 def func():
@@ -1952,8 +2016,8 @@ print( y )
 \begin{pabox}{scope-2}
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
-ファイル名python8-4.pyで保存してください。
-\begin{codebox}{python8-4.py}
+ファイル名python9-4.pyで保存してください。
+\begin{codebox}{python9-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
 def func(x):
@@ -2002,8 +2066,8 @@ print( y )
 テストでは80点以上を「excelent」とし、60点以上を「good」とし、40点以上を「passing」、40点未満を「failing」と評価する関数を記載します。100点を超えていたり0点未満の場合「error」という戻り値となり、点数を引数とする関数evaluationを作成しましょう。
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
-ファイル名python8-5.pyとして保存してください。
-\begin{codebox}{python8-5.py}
+ファイル名python9-5.pyとして保存してください。
+\begin{codebox}{python9-5.py}
 \begin{listing}{1}
 def evaluation(score):
     if score < 0 or score > 100:
