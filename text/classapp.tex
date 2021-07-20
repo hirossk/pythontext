@@ -1,0 +1,231 @@
+\documentclass[11pt,a4paper,dvipdfmx,titlepage]{jsreport}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{varwidth}
+\usepackage{amsmath}
+\newcommand{\kara}{}
+
+\usepackage{makeidx}
+\makeindex
+
+\newcounter{placounter} 
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}   
+%凡例用BOX
+\newtcolorbox[auto counter, number within=chapter, 
+number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}]{legbox}[2][]{% 
+colframe=black!80,colback=white,colbacktitle=black!30,fonttitle=\bfseries\sffamily,breakable,
+    title=コード　~\thetcbcounter: #2,     #1 } 
+%コード入力用BOX
+\newtcolorbox[]{codebox}[2][]{%
+colframe=black!80,colback=white,colbacktitle=black!30,fonttitle=\bfseries\sffamily,breakable,
+title= #2 }
+%入れ子（Nested）改ページありのコード入力用
+\newtcolorbox[]{codebox2}[2][]{%
+colframe=black!80,colback=white,colbacktitle=black!30,fonttitle=\bfseries\sffamily,
+shrink break goal=0pt,
+enforce breakable=true,title= #2 }
+%練習問題用BOX
+\newtcolorbox[use counter=placounter]{plabox}[2][]{%
+colframe=black!80,colback=white,colbacktitle=black!90,sharp corners,fonttitle=\bfseries\sffamily,breakable,
+colback=black!5!white,
+title=練習問題　\if #1 \else : #1 \fi #2 \thetcbcounter,#1}
+%文法記載用BOX
+\newtcolorbox[auto counter,number within=section]{grabox}[2][]{%
+colframe=black!20,colback=white,colbacktitle=black!60,fonttitle=\bfseries\sffamily,breakable,
+title=~\thetcbcounter \if #1 \else : #1 \fi #2,#1}
+%凡例用BOX
+\newtcolorbox[auto counter,number within=part]{papabox}[2][]{%
+attach boxed title to top left, boxed title style={size=small,colback=black},breakable,
+colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries\sffamily,
+title=凡例: #2 #1}
+%ここからテスト
+\newtcolorbox{pabox}[2][]{enhanced, attach boxed title to top left={xshift=0cm,yshift=-2mm}, 
+breakable,fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, 
+colback=black!5!white,colframe=black,
+boxed title style={boxrule=0.75mm,colframe=white, borderline={0.1mm}{0mm}}, 
+borderline={0.1mm}{0.75mm} ,
+title=凡例：{#2},#1}
+
+
+
+\usepackage{tikz,lipsum} 
+\tcbuselibrary{skins,breakable}
+\colorlet{colexam}{red!5!black}
+% Preamble: 
+\usepackage{tikz,lipsum} 
+\tcbuselibrary{skins,breakable} 
+\newcounter{example} 
+%Point用colorbox
+\newtcolorbox[use counter=example]{hipoint}[2][]{%
+empty,title={#2 },attach boxed title to top left, boxed title style={empty,size=minimal,toprule=2pt,top=4pt, overlay={\draw[colexam,line width=2pt] ([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}}, coltitle=colexam,fonttitle=\bfseries, before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt, breakable,pad at break*=0mm,vfill before first, overlay unbroken={\draw[colexam,line width=1pt] ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east) --([xshift=-0.5pt]frame.south east)--(frame.south west); }, overlay first={\draw[colexam,line width=1pt] ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east) --([xshift=-0.5pt]frame.south east); }, overlay middle={\draw[colexam,line width=1pt] ([xshift=-0.5pt]frame.north east) --([xshift=-0.5pt]frame.south east); }, overlay last={\draw[colexam,line width=1pt] ([xshift=-0.5pt]frame.north east) --([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+}
+\newtcolorbox[]{ansbox}[2][]{%
+empty, coltitle=black!75!black,fonttitle=\bfseries, 
+borderline north={0.5mm}{0pt}{black!80!white}, title=#2,
+bottomrule=0mm, 
+titlerule style={black}  }
+
+\begin{document}
+{\gt \huge おまけ}
+\section{クラスの応用}
+\begin{pabox}{class-X}
+
+ここで学生個人のデータを管理することを考えましょう。
+
+学生は学生番号と履修科目と得点を管理しています。履修科目には必須科目（数学、英語、国語）とコース別のAcourse（絵画、音楽）、Bcourse（会計、情報）の選択必須科目があり、どちらかを選択しなければならないことを考えます。
+また、学生の管理するデータを入力することと、学生ごとの合計点を計算する機能が必要だとします。
+
+まずは必須科目を管理する機能と必須科目だけを５人分入力し、それぞれの合計点を出力するプログラムを作成します。
+これをクラスとしてまとめるため、共通科目だけを扱う機能を次のように記載します。
+\end{pabox}
+\begin{codebox2}{一つのクラス}
+\begin{listing}{1}
+class Student: #共通科目を取り扱うためのクラス
+    std_subjects = ["Mathematics" ,"English","Japanese"]
+    def input_number(self):
+            self.number = input( "number = " )
+    def input_scores(self):
+            self.scores = []
+            input_data(self.std_subjects,self.scores)
+        #データを入力するための手続きを関数としてまとめておきました。
+        #エラー処理およびテキスト入力された得点を数値に変換する手続き
+
+    def sum_of_scores(self):
+            self.summary = 0
+            for score in self.scores:
+                self.summary = self.summary + score
+        return self.summary
+
+    # クラスの宣言はここまで
+#ここでインデントを戻す
+def input_data(subjects,scores):
+    for s in subjects:
+        x = input( s + " = " )
+        y = int ( x )
+        if y > 100 or y < 0 :
+            y = -1
+            print ( "エラー" )
+        scores.append( y )
+
+#グローバル変数（リスト）中身はStudentクラスの実体を格納する
+student_list = []
+
+#Studentクラスの実体を5名分追加
+for n in range(5):
+	student_list.append( Student() )
+
+#学生の番号と得点の入力と合計点の出力
+for std in student_list:
+    std.input_number()
+    std.input_scores()
+    print(std.sum_of_scores())
+\end{listing}
+\end{codebox2}
+
+\begin{pabox}{class-2}
+
+凡例class-2
+
+凡例class-1の共通機能を基にして、Acourse、Bcourseの選択必須科目の機能をを追加します。
+
+Acourseの学生３名とBcourseの学生２名の得点を入力して（各コースの順番はばらばらでも可能）それぞれの学生の合計点とAcourseを選択している学生の平均点、Bcourseを選択している学生の平均点を計算するプログラムです。
+\end{pabox}
+\begin{codebox2}{クラスの継承}
+\begin{listing}{1}
+
+class Student: #共通科目を取り扱うためのクラス
+    std_subjects = ["Mathematics" ,"English","Japanese"]
+    def input_number(self):
+            self.number = input( "number = " )
+    def input_scores(self):
+            self.scores = []
+            input_data(self.std_subjects,self.scores)
+        #データを入力するための手続きを関数としてまとめておきました。
+        #エラー処理およびテキスト入力された得点を数値に変換する手続き
+
+    def sum_of_scores(self):
+            self.summary = 0
+            for score in self.scores:
+                self.summary = self.summary + score
+        return self.summary
+
+def input_data(subjects,scores):
+    for s in subjects:
+        x = input( s + " = " )
+        y = int ( x )
+        if y > 100 or y < 0 :
+            y = -1
+            print ( "エラー" )
+        scores.append( y )
+#ここまでは凡例「class-1」の24行目までと同一です。
+
+class AcourseStudent(Student):
+    acourse_subjects = ["picture","music"]
+    def input_scores(self):
+        super().input_scores()
+        input_data(self.acourse_subjects,self.scores)
+class BcourseStudent(Student):
+    bcourse_subjects = ["accounting","information"]
+    def input_scores(self):
+        super().input_scores()
+        input_data(self.bcourse_subjects,self.scores)
+
+student_list = []
+#凡例class-1の学生の追加部分を次のように書き換え
+student_list.append( AcourseStudent() )
+student_list.append( AcourseStudent() )
+student_list.append( BcourseStudent() )
+student_list.append( BcourseStudent() )
+student_list.append( AcourseStudent() )
+
+#学生の番号と得点の入力と合計点の出力
+for std in student_list:
+    std.input_number()
+    std.input_scores()
+
+for std in student_list:
+    print("number = " , std.number , " summary = ", \
+       std.sum_of_scores())
+\end{listing}
+\end{codebox2}
+
+おまけpythonによるguiプログラミング（冬休みの宿題）
+
+\newpage
+
+\begin{verbatim}
+pip install pyqt5
+\end{verbatim}
+
+\begin{pabox}{class-2}
+\begin{listing}{1}
+# pylint: disable=missing-docstring
+# pylint: disable=no-name-in-module
+# pylint: disable=unused-import
+import sys
+from PyQt5.QtWidgets import (QWidget, QPushButton, QApplication)
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.btn = QPushButton('こんにちは', self) #ボタンの生成
+        self.btn.clicked.connect(self.push)  
+        self.btn.setGeometry(0,0,300,200)
+        self.setGeometry(300, 300, 300, 200)
+        self.show()
+
+    def push(self):
+        self.btn.setText("押されました")
+
+app = QApplication(sys.argv)
+ex = Example()
+sys.exit(app.exec_())
+\end{listing}
+\end{pabox}
+
+\end{document}
