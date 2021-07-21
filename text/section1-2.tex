@@ -225,7 +225,7 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
 
  まずは {\gt 対話実行}を行ってみましょう。
 
-\includegraphics[width=10cm]{images/image1.png}
+\includegraphics[width=8cm]{images/image1.png}
 
 vscodeの「表示」メニューから「ターミナル」を選択します。
 
@@ -1753,9 +1753,9 @@ SHINCHITOSE
 
 WebAPIではJSONを利用してデータの交換をすることが多いですが、JSONデータをリスト（配列）もしくは辞書（連想配列）として取り扱うことができます。
 
-\section{JSONとpythonの関係}
+\subsection{JSONとpythonの関係}
 
-\subsection{JSON入門}
+\subsubsection{JSON入門}
 JavaScript Object Notation の略であり、
 連想配列とリスト構造のテキストとしての表記法です。
 
@@ -1763,12 +1763,14 @@ JavaScript Object Notation の略であり、
 
 連想配列とはキー・バリュー形式の配列を意味していて配列の添え字の代わりにキーの値を使って値を取り出すことができる仕組みとなります。
 
-JSONでは「{}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
+JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
 また「キー値」と格納する「値」を「：」コロンで区切ります。
 
 \begin{pabox}{json-1}
-JSONでは「{}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
+JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を入れることができます。
 また「キー値」と格納する「値」を「：」コロンで区切ります。
+
+このまま連想配列やリストと同様の記述となりますので、pythonのdictオブジェクトとして利用することができます。
 \begin{codebox}{python8-1.py}
 \begin{listing}{1}
 AKJ⇒旭川空港
@@ -1778,6 +1780,8 @@ HKD⇒函館空港
 HND⇒東京国際空港   
 \end{listing}
 これらをJSONで記述すると次のようになります。
+
+基本的にpythonの連想配列と同じ記述となります。
 \begin{listing}{1}
 {
  "AKJ":"旭川空港" ,
@@ -1796,25 +1800,35 @@ HND⇒東京国際空港
 
 \begin{pabox}{json-2}
 2年3組　佐々木君の国社数理英のJSON表記は次のようになります。
-\begin{codebox}{python8-1.py}
+\begin{codebox}{python8-2.py}
 \begin{listing}{1}
-{
- "class":"2年3組" ,
- "name":"佐々木" ,
- "score":[60, 70 ,50 , 80, 100]
-}
+json_data = {
+  "class":"2年3組" ,
+  "name":"佐々木" ,
+  "score":[60, 70 ,50 , 80, 100]
+  }
+  
+print('json_data["name"] ⇒ ' +json_data['name'])
+print('json_data["score"] ⇒ ' + str(json_data['score']))
+print('json_data["score"][1] ⇒ ' + str(json_data['score'][1]))
+
+total = 0
+for score in json_data['score']:
+	total = total + score
+print("平均点:" + str(total/5)) 
 \end{listing}
 
-このJSONデータ変数json\_dataに格納しpythonで参照すると次のようになります。
+実行結果は次のようになります。
 \begin{listing}{1}
-json_data["name"] ⇒　"佐々木"
-json_data["score"] ⇒　[60, 70 ,50 , 80, 100]
+json_data["name"] ⇒ 佐々木
+json_data["score"] ⇒ [60, 70 ,50 , 80, 100]
 json_data["score"][1] ⇒ 70
+平均点:72
 \end{listing}
 
 \end{codebox}
 \end{pabox}
-この時json\_dataはdict型（辞書型）となり、json\_data["score"]はlist型となります。
+この時のjson\_dataはdict型（辞書型）となり、json\_data["score"]はlist型となります。
 
 \newpage
 %\subsection{配列の便利な機能（ラムダ式）}
