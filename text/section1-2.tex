@@ -76,7 +76,7 @@ titlerule style={black}  }
   \vspace{15mm}
   \huge プログラミング入門（Python） \par
   \vspace{15mm}
-  \LARGE  初めてのプログラミング　\par
+  \LARGE  初めてのプログラミング　Ver1.2\par
   \vspace{100mm}
 \end{center}
  
@@ -220,10 +220,79 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
  一つ一つ結果を確認して実行する方法と手順をたくさんまとめて実行する方法があります。
 
  コンピューターとは電気電子の作用によって動作する汎用計算機と訳されます。
+ 
+ pythonでは一つ一つの命令を確認しながら実行できる「対話実行モード（インタラクティブモード）」と
+ プログラムファイルを作成して実行する「スクリプトによる実行」を使うことができます。
+ 
+ これらのモードを利用することでコンピューターへ命令するというプログラミングの基礎を効率よく学ぶことができます。
+ 
+\subsection{pythonの考え方}
+pythonの特徴の説明でも書きましたが、pythonでは他の言語と大きく異なる特徴があります。
 
+\begin{itemize}
+\item １行で１つの命令が基本
+\item 処理のまとまり（ブロック）がインデント（文左側空白）により決まる
+\item ライブラリが豊富（IoTやAI、画像解析、WebAPI等）なので、ライブラリの使い方を覚えるだけでいろいろな処理ができる
+\end{itemize}
+
+\begin{pabox}{他の言語の例}
+\begin{verbatim}
+「CやJava」
+     for(int i = 1 ,int total = 0; i <= 10; i++){total += i;}
+「VisualBasic」
+       if a = b then
+    print "true"
+         endif
+「ShellScript」
+     echo "facebookyahooapplegooglemicrosoftamazon" | sed 's/[a-z]\{5\}\
+        (.\)....\(.\)..\(.\).\{13\}\(.\).\{5\}\(.\).*/\1\2\3\4\5/'
+\end{verbatim}
+\end{pabox}
+
+それではpythonの基本文法を理解してから先に進めていきましょう。
+
+\begin{itemize}
+\item 空白（インデント）が重要
+\item 変数の宣言が不要
+\end{itemize}
+インデントの使い方を見てみましょう。
+\begin{pabox}{シンプルなpythonの命令}
+インデント（スペース・空白）の重要性
+\begin{legbox}{インデントのよるエラーの有無}
+\begin{verbatim}
+x = 10 #エラー無し
+ y = 10 #左側にスペースが１文字空いているのでエラーになります（unexpected indent）
+\end{verbatim}
+\end{legbox}
+\end{pabox}
+
+処理のブロック記述を見てみましょう。
+\begin{pabox}{pythonのブロック}
+ブロック開始「:」とインデントの組み合わせです。if文でxの値が10であれば10と表示し、
+xの値が10以外であれば「10以外」と表示しxの値を10に設定するプログラムの例
+\begin{legbox}{インデントのよる処理の流れ}
+\begin{verbatim}
+x = 10
+if x == 10 : #xが10だったらの処理を書くためには「:」でブロックを開始
+    print("xの値は10です")
+    #他の処理はなにもしません。
+else : #xの値が10以外だったらの処理 2行がxの値が10以外の時処理ブロック
+    print("xの値は10以外です")
+    x = 10 #xの値が10以外なので10に設定します。
+y = 0 #これはif文のどちらを通過しても必ず実行されます。
+\end{verbatim}
+\end{legbox}
+\end{pabox}
+
+\newpage
+凡例の流れ図は次の通りとなります。 \\
+
+\includegraphics[width=10cm]{images/ifflow.jpg}
+
+\newpage
 \subsection{計算をさせてみよう。}
 
- まずは {\gt 対話実行}を行ってみましょう。
+ まずは {\gt 対話実行}による計算を行ってみましょう。
 
 \includegraphics[width=8cm]{images/image1.png}
 
