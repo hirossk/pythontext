@@ -1872,7 +1872,7 @@ JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を�
 また「キー値」と格納する「値」を「：」コロンで区切ります。
 
 このまま連想配列やリストと同様の記述となりますので、pythonのdictオブジェクトとして利用することができます。
-\begin{codebox}{python8-1.py}
+\begin{codebox}{python7-2.py}
 \begin{listing}{1}
 AKJ⇒旭川空港
 MMB⇒女満別空港
@@ -1901,7 +1901,7 @@ HND⇒東京国際空港
 
 \begin{pabox}{json-2}
 2年3組　佐々木君の国社数理英のJSON表記は次のようになります。
-\begin{codebox}{python8-2.py}
+\begin{codebox}{python7-3.py}
 \begin{listing}{1}
 json_data = {
   "class":"2年3組" ,
@@ -1970,7 +1970,7 @@ def 関数名(引数1,引数2):
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
 ファイル名をpython9-1.pyとして保存してください。
-\begin{codebox}{python9-1.py}
+\begin{codebox}{python8-1.py}
 \begin{listing}{1}
 def func(x):
     answer = x ** 2 + 2 * 2 + 3
@@ -2011,7 +2011,7 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 ファイル名をpython9-2.pyとして保存してください。
 
-\begin{codebox}{python9-2.py}
+\begin{codebox}{python8-2.py}
 \begin{listing}{1}
 def func1(x):
     answer = x ** 2 + 2 * 2 + 3
@@ -2098,7 +2098,7 @@ NameError: name 'x' is not defined
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
 ファイル名python9-3.pyで保存してください。
-\begin{codebox}{python9-3.py}
+\begin{codebox}{python8-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
 def func():
@@ -2132,7 +2132,7 @@ print( y )
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
 ファイル名python9-4.pyで保存してください。
-\begin{codebox}{python9-4.py}
+\begin{codebox}{python8-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
 def func(x):
@@ -2182,7 +2182,7 @@ print( y )
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
 ファイル名python9-5.pyとして保存してください。
-\begin{codebox}{python9-5.py}
+\begin{codebox}{python8-5.py}
 \begin{listing}{1}
 def evaluation(score):
     if score < 0 or score > 100:
