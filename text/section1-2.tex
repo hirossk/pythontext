@@ -153,7 +153,7 @@ python特徴の説明
 
 
 
-いずれかを選択しダウンロードしますが、通常は32bit版であれば汎用性が高いです。
+いずれかを選択しダウンロードします。
 
 \includegraphics[width=10cm]{images/image8.png}
 
@@ -163,9 +163,9 @@ python特徴の説明
 	\item Install now をクリックしてインストールをしてください。
 \end{enumerate}
 
-\subsection{エディター（vscode）準備}
+\subsection{エディター（Visual Studio ode）準備}
 
-次のURLを参照し「vscode」をダウンロードを行います。
+次のURLを参照し「Visual Studio Code（vscode）」をダウンロードを行います。
 
 \begin{description}
 	\item $https://code.visualstudio.com/download$
@@ -212,10 +212,10 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
 
 
 
-\chapter{プログラミング 最初の一歩}
+\chapter{プログラミング 基礎}
 \setcounter{section}{0}
 
-\section{コンピューターへの命令の実行}
+\section{コンピューターを使った命令の実行}
 \subsection{命令や計算の実行方法}
  一つ一つ結果を確認して実行する方法と手順をたくさんまとめて実行する方法があります。
 
@@ -225,6 +225,32 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
  プログラムファイルを作成して実行する「スクリプトによる実行」を使うことができます。
  
  これらのモードを利用することでコンピューターへ命令するというプログラミングの基礎を効率よく学ぶことができます。
+
+\begin{pabox}{pythonの実行方法}
+対話実行の場合は入力待ちとなり「$>>>$」の後ろに直接命令や計算式を入力することができます。
+\begin{grabox}{対話実行}
+\begin{verbatim}
+>>> x = 10
+>>> print(x)
+10
+>>> exit() #または　Ctrl+zで終了します。
+\end{verbatim}
+\end{grabox}
+\newpage
+プログラム（スクリプト）を記述して実行する場合は「python」コマンドに続いて保存したファイル名を指定します。
+
+Visual Studio Code（vscode）でpython拡張を導入している場合は「F5」キーで実行することができます。
+\begin{grabox}{スクリプトによる実行}
+\begin{verbatim}
+C:\Users\username> python ファイル名.py
+10
+C:\Users\username> 
+\end{verbatim}
+\end{grabox}
+
+\end{pabox}
+ 
+ 
  
 \subsection{pythonの考え方}
 pythonの特徴の説明でも書きましたが、pythonでは他の言語と大きく異なる特徴があります。
@@ -237,7 +263,7 @@ pythonの特徴の説明でも書きましたが、pythonでは他の言語と�
 
 \begin{pabox}{他の言語の例}
 \begin{verbatim}
-「CやJava」
+「CまたはJava」
      for(int i = 1 ,int total = 0; i <= 10; i++){total += i;}
 「VisualBasic」
        if a = b then
@@ -246,6 +272,7 @@ pythonの特徴の説明でも書きましたが、pythonでは他の言語と�
 「ShellScript」
      echo "facebookyahooapplegooglemicrosoftamazon" | sed 's/[a-z]\{5\}\
         (.\)....\(.\)..\(.\).\{13\}\(.\).\{5\}\(.\).*/\1\2\3\4\5/'
+#統一感がありません
 \end{verbatim}
 \end{pabox}
 
@@ -266,7 +293,13 @@ x = 10 #エラー無し
 \end{legbox}
 \end{pabox}
 
-処理のブロック記述を見てみましょう。
+pythonでは一連の処理をブロックという形で表現することになっています。
+ある条件が成立したときに行う処理と整理ししなかったときに行う処理を分けて行う流れ図を見てブロック記述を見てみましょう。\\
+
+\includegraphics[width=8cm]{images/ifflow.jpg}
+
+\newpage
+前述の流れ図をpythonで記述した場合、次のようになります。 
 \begin{pabox}{pythonのブロック}
 ブロック開始「:」とインデントの組み合わせです。if文でxの値が10であれば10と表示し、
 xの値が10以外であれば「10以外」と表示しxの値を10に設定するプログラムの例
@@ -276,36 +309,35 @@ x = 10
 if x == 10 : #xが10だったらの処理を書くためには「:」でブロックを開始
     print("xの値は10です")
     #他の処理はなにもしません。
-else : #xの値が10以外だったらの処理 2行がxの値が10以外の時処理ブロック
+else : #xの値が10以外だったらの処理 2行がxの値が10以外の処理ブロック
     print("xの値は10以外です")
     x = 10 #xの値が10以外なので10に設定します。
 y = 0 #これはif文のどちらを通過しても必ず実行されます。
 \end{verbatim}
 \end{legbox}
+pythonでは左側のインデントによってどこからどこまでが一連の処理か判断しています。
 \end{pabox}
+今回の授業で利用するVisual Studio Codeではpythonで記述するインデントを直前の行と自動で合わせる機能を持っています。
 
 \newpage
-凡例の流れ図は次の通りとなります。 \\
-
-\includegraphics[width=10cm]{images/ifflow.jpg}
-
-\newpage
-\subsection{計算をさせてみよう。}
+\subsection{pythonを使った計算}
 
  まずは {\gt 対話実行}による計算を行ってみましょう。
 
-\includegraphics[width=8cm]{images/image1.png}
+\includegraphics[width=6cm]{images/image1.png}
 
 vscodeの「表示」メニューから「ターミナル」を選択します。
 
-\includegraphics[width=10cm]{images/image7.png}
+右下にターミナルが表示されますので、「py」コマンドを入力することで対話実行を起動します。
 
-こちらの図のコマンドから「py」コマンドを起動しましょう。
+\includegraphics[width=13cm]{images/image7.png}
 
-\begin{grabox}{対話実行pythonの起動}
+次の例の通り「$>>>$」に続いて計算式を入力することですぐに計算結果を取得することができます。
+
+\begin{grabox}{対話実行pythonの起動：例}
 \begin{listingcont}
 c:\\～> py
-Python 3.7.～省略～ on win32
+Python 3.9.6 ～省略～ on win32
 Type "help", ～省略～
 >>> 1 + 2 #>>>の後に計算式を入力します。
 3
@@ -329,7 +361,7 @@ Type "help", ～省略～
 
 \subsection{変数とは？}
 
-プログラムでは単純な計算以外に処理の結果を次に引き渡して連続したまとまった処理を多なうことが多いです。
+プログラムでは単純な計算以外に処理の結果を次に引き渡して連続したまとまった処理を行うことが多いです。
 
 その際に変数といわれる計算結果を一時的に保存しておくためのデータ領域が使われます。
 
