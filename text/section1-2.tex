@@ -284,13 +284,14 @@ pythonの特徴の説明でも書きましたが、pythonでは他の言語と�
 \end{itemize}
 インデントの使い方を見てみましょう。
 \begin{pabox}{シンプルなpythonの命令}
-インデント（スペース・空白）の重要性
+インデント（スペース・空白）には意味がありますので、必要のないスペースはエラーになります。
 \begin{legbox}{インデントのよるエラーの有無}
 \begin{verbatim}
 x = 10 #エラー無し
  y = 10 #左側にスペースが１文字空いているのでエラーになります（unexpected indent）
 \end{verbatim}
 \end{legbox}
+pythonでは\#から右側はコメントとなり、処理には無関係でプログラムの説明等を記述します。
 \end{pabox}
 
 pythonでは一連の処理をブロックという形で表現することになっています。
@@ -602,12 +603,12 @@ False
 \begin{tabular}{|c|p{4cm}|} 
 \hline
 記号 & 意味　\\ \hline \hline
- $ == $ & “等しい” \\ \hline
- $ < $ & “小なり” \\ \hline
- $ > $ & “大なり” \\ \hline
- $ <= $ & “小なりイコール” \\ \hline
- $ >= $ & “大なりイコール” \\ \hline
- $ != $ & “等しくない” \\ \hline
+ $ == $ & "等しい” \\ \hline
+ $ < $ & "小なり” \\ \hline
+ $ > $ & "大なり” \\ \hline
+ $ <= $ & "小なりイコール” \\ \hline
+ $ >= $ & "大なりイコール” \\ \hline
+ $ != $ & "等しくない” \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
@@ -807,13 +808,13 @@ else:
 \begin{listing}{1}
 x = 60
 if x >= 80:
-    print ( “A” )
+    print ( "A" )
 elif x >= 60:
-    print ( “B” )
+    print ( "B" )
 elif x >= 40:
-    print ( “C” )
+    print ( "C" )
 else:
-    print ( “D” )
+    print ( "D" )
 \end{listing}
 \end{legbox}
 保存しif文の動作を確認してみましょう。
@@ -909,7 +910,7 @@ True
 abc #　キーボードから入力
 ‘abc’
 >>>
->>> input( “type = ” )
+>>> input( "type = ” )
 type = xyz
 ‘xyz’
 >>>
@@ -921,7 +922,7 @@ type = xyz
 入力した文字を変数sにいれてみましょう。
 \begin{grabox}{キーボードから変数への代入}
 \begin{listingcont}
->>> s = input( “type = “ )
+>>> s = input( "type = " )
 type = xyz
 >>> s
 ‘xyz’
@@ -944,7 +945,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: can only concatenate str (not "int") to str
 ※　文字列と数値では計算できませんのでエラーになります。
->>> s + “10”
+>>> s + "10”
 xyz10
 ※　文字列と文字列はプラスで連結されることがわかります。
 \end{listingcont}
@@ -956,7 +957,7 @@ xyz10
 
 \begin{grabox}{文字列の取り扱い（数字１）}
 \begin{listingcont}
->>> s = input ( “number = “ )
+>>> s = input ( "number = " )
 10
 >>> s
 ‘10’
@@ -987,7 +988,7 @@ xyz10
 \begin{listingcont}
 >>> str( n * 2 )
 ‘20’
->>> str( n * 2 ) + “ is twenty”
+>>> str( n * 2 ) + " is twenty”
 ‘20 is twenty’
 \end{listingcont}
 \end{grabox}
@@ -1022,7 +1023,7 @@ The average is 65.0
 \subsubsection{練習問題}
 \begin{plabox}{Plactice}
 
-「凡例input-1」を社会の得点をzに入力「”{\tt social = }“」し、変数sに数値化して学生Aさんの1科目当たりの平均点を出力しましょう。
+「凡例input-1」を社会の得点をzに入力「”{\tt social = }"」し、変数sに数値化して学生Aさんの1科目当たりの平均点を出力しましょう。
 
 python4-1.pyをファイル名「plactice5.py」として別名で保存しましょう。
 
@@ -1206,19 +1207,19 @@ python5-3.pyをファイル名「plactice7.py」として別名で保存しま�
 \newpage
 \begin{grabox}{人がやる繰り返し}
 \begin{listing}{1}
-x = input ( “subject1 = “ )
+x = input ( "subject1 = " )
 y = int ( x ) 
-x = input ( “subject2 = “ )
+x = input ( "subject2 = " )
 y = y + int ( x ) 
-x = input ( “subject3 = “ )
+x = input ( "subject3 = " )
 y = y + int ( x ) 
-x = input ( “subject4 = “ )
+x = input ( "subject4 = " )
 y = y + int ( x ) 
 ※　そろそろ飽きてきます。
 　　　　・
 　　　　・
 　　　　・
-x = input ( “subject10 = “ )
+x = input ( "subject10 = " )
 y = y + int ( x )　
 print ( y / 10 )
 ※　できますが、電卓入力のほうが楽です。
@@ -1230,19 +1231,19 @@ print ( y / 10 )
 よく見ると2科目目以降はそっくりです。
 
 \begin{verbatim}
-x = input ( “subject2 = “ )
+x = input ( "subject2 = " )
 y = y + int ( x ) 
 \end{verbatim}
 
 1科目目も0に入力した値を加算すると書き換えてみましょう。（初期値0という意味です。）
 \begin{verbatim}
-x = input ( “subject1 = “ )
+x = input ( "subject1 = " )
 y = 0 + int ( x ) 
 
 つまり最初だけ変数yに0を入れます。
 y = 0
 ここから10回繰り返し
-x = input ( “subjectN = “ )
+x = input ( "subjectN = " )
 y = y +　int ( x )
 
 繰り返しが終わったら平均値を出力します。
@@ -1256,8 +1257,8 @@ print ( y / 10 )
 \begin{codebox}{python5-4.py}
 \begin{listing}{1}
 y = 0
-for n in range(10):
-    x = input ( “subjectN = “ )
+for n in range(1, 11):
+    x = input ( "subject" + str(n) + " = " )
     y = y + int( x )
 print( y / 10 )
 \end{listing}
@@ -1353,6 +1354,7 @@ else:
 
 また、他にはcontinue制御文もありますが、ここでは説明しませんので、興味があれば検索してください。
 
+\newpage
 \section{配列について（繰り返し処理の活用）}
 
 \subsection{配列(list)とは？}
@@ -1362,18 +1364,17 @@ else:
 得点入力の科目名を一覧表示するプログラムは次の通りです。
 
 何度も同じ科目名を入力したり出力するのであれば変数に入れておきますが、繰り返し同じことを書くのは非効率的です。
-\newpage
 \begin{grabox}{変数の利用(繰り返し記述)}
 \begin{listing}{1}
-m = “Mathematics”
+m = "Mathematics”
 print ( m )
-e = “English”
+e = "English”
 print ( e )
-so = “Social”
+so = "Social”
 print ( so )
-j = “Japanese”
+j = "Japanese”
 print ( j )
-sc = “Scientific”
+sc = "Scientific”
 print ( sc )
 \end{listing}
 \end{grabox}
@@ -1381,17 +1382,17 @@ print ( sc )
 そこで繰り返し利用できるように、同じ変数に値の一覧として格納していきます。
 \begin{grabox}{配列の利用}
 \begin{verbatim}
-subjects = [“Mathematics”,”English”,”Social”,”Japanese”,”Scientific”]
+subjects = ["Mathematics”,”English”,”Social”,”Japanese”,”Scientific”]
 \end{verbatim}
 この変数{\tt subjects}に格納されている値のイメージは次の通りとなります。
  \begin{center}
 \begin{tabular}{|c|p{5cm}|} \hline
       & 変数subjects（配列）       \\ \hline \hline
-0番目  & “Mathematics”  \\ \hline
-1番目  & “English”      \\ \hline
-2番目  & “Social”       \\ \hline
-3番目  & “Japanese”     \\ \hline
-4番目  & “Scientific”   \\ \hline
+0番目  & "Mathematics”  \\ \hline
+1番目  & "English”      \\ \hline
+2番目  & "Social”       \\ \hline
+3番目  & "Japanese”     \\ \hline
+4番目  & "Scientific”   \\ \hline
 \end{tabular}
 \end{center}
 \end{grabox}
@@ -1432,7 +1433,7 @@ for文ではinの後ろにある配列（list）の内容を最後まで繰り�
 for文では配列の最初の値を変数に代入してブロック内の処理します。次に配列の次の値を変数に代入してブロック内の処理をします。
 配列の中身をすべて変数に代入し、次の処理すべき配列がなくなったときに処理を終了します。
 
-つまり変数{\tt s}の中身は“Mathematics”$\rightarrow$”English”$\rightarrow$”Social”$\rightarrow$”Japanese”$\rightarrow$”Scientific”と
+つまり変数{\tt s}の中身は"Mathematics”$\rightarrow$”English”$\rightarrow$”Social”$\rightarrow$”Japanese”$\rightarrow$”Scientific”と
 変化しながらブロック内の処理「{\tt print ( s ) }」を実行することになります。
 \newpage
 for文と配列を使ってデータ入力と出力を効率よく処理する流れを見てみましょう。
@@ -1481,11 +1482,11 @@ for n in range(5):
     \caption{配列のイメージ}
 \begin{tabular}{|c|c|c|} \hline
       & subjects      & scores \\ \hline \hline
-0番目  & “Mathematics” &   10	\\ \hline
-1番目  & “English”     &   20 \\ \hline
-2番目  & “Social”      &   30 \\ \hline
-3番目  & “Japanese”    &   40 \\ \hline
-4番目  & “Scientific”  &   50 \\ \hline
+0番目  & "Mathematics” &   10	\\ \hline
+1番目  & "English”     &   20 \\ \hline
+2番目  & "Social”      &   30 \\ \hline
+3番目  & "Japanese”    &   40 \\ \hline
+4番目  & "Scientific”  &   50 \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
@@ -1496,7 +1497,7 @@ for n in range(5):
 \begin{grabox}{繰り返し出力}
 \begin{listing}{1}
 for n in range(5):
-    print ( subjects[n] + “:” , scores[n])
+    print ( subjects[n] + ":” , scores[n])
 \end{listing}
 この時の変数nの値は0,1,2,3,4とれぞれ繰り返しの中で変化していきますので、
 出力結果は次の通りとなります。
@@ -2429,7 +2430,7 @@ print ( sum )
 \begin{listing}{1}
 y = 0
 for n in range(1,6):
-    x = input ( “subject” + str(n) + “ = “ )
+    x = input ( "subject” + str(n) + " = " )
     y = y + int( x )
 print( y / 5 )
 \end{listing}
