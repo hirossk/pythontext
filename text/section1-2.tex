@@ -1294,7 +1294,7 @@ while 条件式:
 whileを使って１～５までの合計を求め出力するプログラムを作ります。
 
 ファイル名：python5-5.py
-\begin{codebox}{whileを利用したやり方}
+\begin{codebox}{python5-5.py}
 \begin{listing}{1}
 i = 1
 total = 0
@@ -1324,7 +1324,7 @@ whileを使って１～５までの合計を求め出力するプログラムを
 ここでwhile文は式の評価結果を常に真とするようにしています。
 
 ファイル名：python5-6.py
-\begin{codebox}{whileを利用したやり方}
+\begin{codebox}{python5-6.py}
 \begin{listing}{1}
 i = 1
 total = 0
@@ -1970,7 +1970,7 @@ def 関数名(引数1,引数2):
 
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
-ファイル名をpython9-1.pyとして保存してください。
+ファイル名をpython8-1.pyとして保存してください。
 \begin{codebox}{python8-1.py}
 \begin{listing}{1}
 def func(x):
@@ -2010,7 +2010,7 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 作ったプログラムで上記2次方程式の0から4まで整数代入した合計を求めます。
 
-ファイル名をpython9-2.pyとして保存してください。
+ファイル名をpython8-2.pyとして保存してください。
 
 \begin{codebox}{python8-2.py}
 \begin{listing}{1}
@@ -2098,7 +2098,7 @@ NameError: name 'x' is not defined
 \begin{pabox}{scope-1}
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
-ファイル名python9-3.pyで保存してください。
+ファイル名python8-3.pyで保存してください。
 \begin{codebox}{python8-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
@@ -2132,7 +2132,7 @@ print( y )
 \begin{pabox}{scope-2}
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
-ファイル名python9-4.pyで保存してください。
+ファイル名python8-4.pyで保存してください。
 \begin{codebox}{python8-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
@@ -2182,7 +2182,7 @@ print( y )
 テストでは80点以上を「excelent」とし、60点以上を「good」とし、40点以上を「passing」、40点未満を「failing」と評価する関数を記載します。100点を超えていたり0点未満の場合「error」という戻り値となり、点数を引数とする関数evaluationを作成しましょう。
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
-ファイル名python9-5.pyとして保存してください。
+ファイル名python8-5.pyとして保存してください。
 \begin{codebox}{python8-5.py}
 \begin{listing}{1}
 def evaluation(score):
@@ -2296,20 +2296,21 @@ Naoi の 5 科目の平均点 82.0
 \end{verbatim}
 \end{codebox}
 \end{plabox}
-
-\section{機能の追加（モジュールの利用）}
+\newpage
+\section{機能の追加（ライブラリ（モジュール）の利用）}
+\subsection{ライブラリの利用}
 pythonでは時間や乱数機能の追加を行うことができます。
 
-システムの時間を取得するdatetimeやtimeモジュールと乱数を扱うrandomモジュールをここで紹介します。
+システムの時間を取得するdatetimeやtimeと乱数を扱うrandomライブラリをここで紹介します。
 
-他にもたくさんのモジュールが利用できますので、興味のある方は調べてみましょう。
-\begin{pabox}{func-3}
-10回繰り返しをfor文で行い、モジュールを使って現在時刻、カウンターiの平方根$\sqrt{　i　}$や3乗根$\sqrt[3]{　i　}$を表示して、乱数で生成された1～3の数値の秒数を待ち時間とするプログラムを作成しましょう。
+他にもたくさんのライブラリが利用できますので、興味のある方は調べてみましょう。
+\begin{pabox}{module-1}
+for文で10回繰り返しを行い、ライブラリを使って現在時刻、カウンターiの平方根$\sqrt{　i　}$や3乗根$\sqrt[3]{　i　}$を表示して、乱数で生成された1～3の数値の秒数を待ち時間とするプログラムを作成しましょう。
 
 ファイル名python9-1.pyとして保存してください。
 \begin{codebox}{python9-1.py}
 \begin{listing}{1}
-#モジュールを利用する場合import文で読み込みを行う
+#ライブラリを利用する場合import文で読み込みを行う
 import random
 import time
 import math
@@ -2334,6 +2335,276 @@ else:
 \end{codebox}
 \end{pabox}
 
+\subsection{図形の描画ライブラリ}
+それではライブラリを活用してイメージを描画してみましょう。
+
+イメージを扱うためのライブラリは「Pillow」や「OpenCV」が有名です。
+
+\begin{itemize}
+\item Pillowは基本的な図形描画やリサイズ・トリミング・モザイク加工等ができます。
+\item OpenCVはPillowの機能に顔認識や画像変換・エッジ等の機能が追加されている高機能ライブラリです。
+\end{itemize}
+
+このテキストでは簡単でわかりやすい描画ライブラリであるPillowを使います。
+
+コンピューターのグラフィックの座標軸は次の図形にある通り左上を原点$(0,0)$としてx座標,y座標共に増加すると右方向、下方向に座標を移動します。
+\\
+\\
+
+
+\includegraphics[width=9cm]{images/drawimage1.png}
+
+\begin{pabox}{pillow-1}
+それではPillowライブラリを使って先の図形のように２点間の線を引いてみましょう。
+
+最初に描画用の領域（サイズが500px,300px）を作成して表示してみましょう。
+
+ファイル名python9-2.pyとして保存してください。
+\begin{codebox}{python9-2.py}
+\begin{listing}{1}
+#Pillowライブラリを利用する場合は名称PILを使う宣言が必要で、
+#import文で描画に必要なライブラリを指定する。
+from PIL import Image
+
+im = Image.new('RGB', (500, 300)) #イメージを作成する。'RGB'は赤・緑・青の色指定を意味する
+
+im.show() #イメージを表示する
+\end{listing}
+\end{codebox}
+
+描画用のエリアに「$(50,50)-(150,50)$」と「$(50,100)-(150,150)$」の座標で白い線を引いてみましょう。
+
+
+ファイル名python9-3.pyとして保存してください。
+\begin{codebox}{python9-3.py}
+\begin{listing}{1}
+from PIL import Image,ImageDraw #ImageDrawのインポートを追加する
+
+im = Image.new('RGB', (500, 300))
+draw = ImageDraw.Draw(im) #描画用のオブジェクトを生成する
+
+draw.line((50,50,150,50)) #x,y座標を指定して線を引く 
+draw.line((50,100,150,150))
+
+im.show()
+\end{listing}
+\end{codebox}
+
+それでは赤い線に変更してみましょう。
+
+ファイル名python9-4.pyとして保存してください。
+\begin{codebox}{python9-4.py}
+\begin{listing}{1}
+from PIL import Image,ImageDraw
+
+im = Image.new('RGB', (500, 300))
+draw = ImageDraw.Draw(im)
+draw.line((50,50,150,50),fill=(255,0,0)) #引数に色指定を追加する
+draw.line((50,100,150,150),fill=(255,0,0), width = 4)
+  #引数に線の幅を指定する
+im.show()
+\end{listing}
+\end{codebox}
+\end{pabox}
+
+\begin{grabox}{図形描画関数（メソッド）の利用}
+ImageDrawオブジェクトで呼び出す描画関数
+
+\begin{codebox}{点を描画}
+\begin{verbatim}
+point( 座標 , fill= )
+  座標: (座標x1, 座標y1, 座標x2,　座標y3........)
+  fill: colorの指定
+\end{verbatim}
+\end{codebox}
+\begin{codebox}{線を描画}
+\begin{verbatim}
+line( 座標 , fill= , outline= , width= ,joint= )
+  座標: (座標x1, 座標y1, 座標x2,　座標y3........)
+  fill: colorの指定
+  width: 線の幅
+  joint: "curve"を指定すると折り曲げた際の線の角が丸くなる
+\end{verbatim}
+\end{codebox}
+
+\begin{codebox}{矩形（長方形）を描画}
+\begin{verbatim}
+rectangle( 座標 , fill= , outline= , width= )
+  座標:「（始点座標x,始点座標y,終点座標x,終点座標y）」
+  fill: colorの指定
+  outline: colorの指定
+  width: 線の幅
+\end{verbatim}
+\end{codebox}
+\begin{codebox}{楕円を描画}
+指定した矩形に内接する楕円を描画する
+\begin{verbatim}
+ellipse( 座標 , fill= , outline= , width= )
+  座標:「（始点座標x,始点座標y,終点座標x,終点座標y）」
+  ※ここの座標は円図形を囲うのに必要な箱の始点と終点となります。
+  fill: colorの指定
+  outline: colorの指定
+  width: 線の幅
+\end{verbatim}
+\end{codebox}
+\begin{codebox}{円弧を描画}
+始点終点を指定して円弧を描画
+\begin{verbatim}
+arc( 座標 , start, end, fill= , width= )
+  座標:「（始点座標x,始点座標y,終点座標x,終点座標y）」
+  ※ここの座標は円図形を囲うのに必要な箱の始点と終点となります。
+  start: 時計の3時を原点とした円弧の開始位置を度(°)数で指定します
+  end: 時計の3時を原点とした円弧の終了位置を度(°)数で指定します
+  fill: colorの指定
+  width: 線の幅
+\end{verbatim}
+\end{codebox}
+\begin{codebox}{弦（弓）を描画}
+始点終点を指定して弦（弓）を描画
+\begin{verbatim}
+chord( 座標 , start, end, fill= , outline= )
+  座標:「（始点座標x,始点座標y,終点座標x,終点座標y）」
+  ※ここの座標は円図形を囲うのに必要な箱の始点と終点となります。
+  start: 時計の3時を原点とした円弧の開始位置を度(°)数で指定します
+  end: 時計の3時を原点とした円弧の終了位置を度(°)数で指定します
+  fill: colorの指定
+  outline: colorの指定
+\end{verbatim}
+\end{codebox}
+\end{grabox}
+
+それではここまでの知識を使って簡単に図形を描画してみます。
+
+\begin{pabox}{pillow-2}
+図形を描画する凡例
+
+ファイル名python9-5.pyとして保存してください。
+\begin{codebox}{python9-5.py}
+\begin{listing}{1}
+from PIL import Image,ImageDraw
+
+im = Image.new('RGB', (500, 500),(255,240,230))
+#背景をクリーム色で描画用のエリアを作成します。
+
+draw = ImageDraw.Draw(im)
+draw.ellipse((100,100,400,400),fill=(230,150,110))
+draw.ellipse((190,155,220,210),fill=(0,0,0))
+draw.ellipse((280,155,310,210),fill=(0,0,0))
+draw.ellipse((200,210,300,290),fill=(230,50,12))
+draw.rectangle((250,230,270,250),fill=(255,255,255))
+
+draw.arc((150,140,260,250),-120,-60,fill=(0,0,0),width=5)
+draw.arc((240,140,350,250),-120,-60,fill=(0,0,0),width=5)
+
+draw.chord((190,240,310,350),start=-10,end=190,fill=(210,80,82))
+
+im.show()
+
+\end{listing}
+\end{codebox}
+\end{pabox}
+
+\begin{pabox}{pillow-3}
+繰り返しを利用して図形を描画する凡例です。
+色や位置を変化させながら図形描画します。
+
+ファイル名python9-6.pyとして保存してください。
+\begin{codebox}{python9-6.py}
+\begin{listing}{1}
+from PIL import Image,ImageDraw
+import time
+
+im = Image.new('RGB', (500, 500),(255,255,255))
+
+draw = ImageDraw.Draw(im)
+
+for x in range(0,255):
+    draw.ellipse((100 + x,100,400,400),fill=(x,0,255-x))  
+
+im.show()
+\end{listing}
+\end{codebox}
+\end{pabox}
+
+\subsection{イメージの読み込み}
+ここでは写真を読み込んで表示します。
+
+
+
+\begin{pabox}{pillow-2}
+プログラムで画像ファイルを指定して読み込むには画像ファイルがある場所を指し示すためにパスを指定します。
+現在プログラムの存在する場所からの相対で指定しますので、今回は「imagesample」フォルダー（ディレクトリ）内にある「sample01.jpg」を使ってみましょう。
+
+ファイル名python9-7.pyとして保存してください。
+\begin{codebox}{python9-7.py}
+\begin{listing}{1}
+from PIL import Image
+
+img = Image.open("imagesample/sample01.jpg")  
+# 画像の読み込み
+
+img.show()  # 画像表示
+
+\end{listing}
+\end{codebox}
+
+さらに画像を30°回転させてみましょう。
+
+ファイル名python9-8.pyとして保存してください。
+\begin{codebox}{python9-8.py}
+\begin{listing}{1}
+from PIL import Image
+
+img = Image.open("imagesample/sample01.jpg")  
+# 画像の読み込み
+
+#img = img.rotate(30)
+#回転画像をもとの変数（オブジェクト）に入れています
+
+img.show()  # 画像表示
+
+\end{listing}
+\end{codebox}
+
+
+プログラムでイメージ加工する場合に簡単にできそうなことをまとめてみました。
+
+\begin{codebox}{python9-8.py}
+\begin{listing}{1}
+from PIL import Image,ImageDraw,ImageFilter
+
+img1 = Image.open("imagesample/sample01.jpg") 
+img2 = Image.open("imagesample/sample02.jpg") 
+#img2 = Image.open("imagesample/sample02.jpg").resize((180,150))
+# 画像の読み込み
+
+
+img1.show()  
+img2.show()
+
+#img3 = Image.new("RGB", img1.size)
+#img3.paste(img2)
+
+#mask = Image.new("L", img1.size, 128)
+#im = Image.composite(img1, img3, mask)
+#im = Image.blend(img1, img3, 0.5)
+
+#mask = Image.new("L", img1.size, 0)
+#draw = ImageDraw.Draw(mask)
+#draw.ellipse((0, 0, 179, 149), fill=255)
+#im = Image.composite(img3, img1, mask)
+
+#mask = Image.new("L", img1.size, 0)
+#draw = ImageDraw.Draw(mask)
+#draw.ellipse((0, 0, 179, 149), fill=255)
+#mask_blur = mask.filter(ImageFilter.GaussianBlur(10))
+#im = Image.composite(img3, img1, mask_blur)
+
+#im.show()
+# 画像表示
+\end{listing}
+\end{codebox}
+\end{pabox}
 
 
 \include{class}
