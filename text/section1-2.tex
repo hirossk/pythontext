@@ -1874,13 +1874,13 @@ JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を�
 
 このまま連想配列やリストと同様の記述となりますので、pythonのdictオブジェクトとして利用することができます。
 \begin{codebox}{python7-2.py}
-\begin{listing}{1}
+\begin{verbatim}
 AKJ⇒旭川空港
 MMB⇒女満別空港
 CTS⇒新千歳空港
 HKD⇒函館空港
 HND⇒東京国際空港   
-\end{listing}
+\end{verbatim}
 これらをJSONで記述すると次のようになります。
 
 基本的にpythonの連想配列と同じ記述となります。
@@ -1974,7 +1974,7 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義して
 \begin{codebox}{python8-1.py}
 \begin{listing}{1}
 def func(x):
-    answer = x ** 2 + 2 * 2 + 3
+    answer = x ** 2 + 2 * x + 3
     return answer
 #ここでインデント（字下げ）を戻すことで関数（まとまった手順）が終わったという意味ことになります。
 y = func(2) #ここで上に書いた関数funcを呼び出しています。
@@ -1989,7 +1989,7 @@ print( y )
 \end{listing}
 \end{codebox}
 
-それぞれ「１１」と「２７」が関数の結果として表示されることを確認できます。
+それぞれ「11」と「27」が関数の結果として表示されることを確認できます。
 \end{pabox}
  {\gt 対話実行}で定義の無い関数を呼び出すと次のエラーが出力されます。
 プログラムとして保存して実行しても同様のエラーとなります。
@@ -2015,7 +2015,7 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 \begin{codebox}{python8-2.py}
 \begin{listing}{1}
 def func1(x):
-    answer = x ** 2 + 2 * 2 + 3
+    answer = x ** 2 + 2 * x + 3
     return answer
 
 def func2(n):
