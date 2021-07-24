@@ -1454,7 +1454,7 @@ for s in subjects:
 
 l = len(subjects)
 #配列の長さはlen関数を利用することで求められます（ここでは5となります）
-for n in range(5):
+for n in range(l):
     print ( subjects[n] + ":" , scores[n])
 # print命令は「,」（カンマ）でつなぐと改行なしで値を出力できます。
 \end{listing}
@@ -2314,7 +2314,6 @@ for文で10回繰り返しを行い、ライブラリを使って現在時刻、
 import random
 import time
 import math
-
 for i in range(10):
     print( i )
     #現在時刻を取得し表示する
@@ -2328,7 +2327,6 @@ for i in range(10):
     print( a )
     #sleepは引数で指定された時間
     time.sleep( 1 )
-
 else:
     print( "end" )
 \end{listing}
@@ -2352,7 +2350,7 @@ else:
 \\
 
 
-\includegraphics[width=9cm]{images/drawimage1.png}
+\includegraphics[width=7.5cm]{images/drawimage1.png}
 
 \begin{pabox}{pillow-1}
 それではPillowライブラリを使って先の図形のように２点間の線を引いてみましょう。
@@ -2575,32 +2573,32 @@ from PIL import Image,ImageDraw,ImageFilter
 
 img1 = Image.open("imagesample/sample01.jpg") 
 img2 = Image.open("imagesample/sample02.jpg") 
-#img2 = Image.open("imagesample/sample02.jpg").resize((180,150))
+img3 = Image.open("imagesample/sample02.jpg").resize((180,150))
 # 画像の読み込み
-
-
 img1.show()  
 img2.show()
 
-#img3 = Image.new("RGB", img1.size)
-#img3.paste(img2)
+img4 = Image.new("RGB", img1.size)
+img4.paste(img3)
+img4.show()
 
-#mask = Image.new("L", img1.size, 128)
-#im = Image.composite(img1, img3, mask)
-#im = Image.blend(img1, img3, 0.5)
+mask = Image.new("L", img1.size, 128)
+im = Image.composite(img1, img4, mask)
+im = Image.blend(img1, img4, 0.5)
+im.show()
 
-#mask = Image.new("L", img1.size, 0)
-#draw = ImageDraw.Draw(mask)
-#draw.ellipse((0, 0, 179, 149), fill=255)
-#im = Image.composite(img3, img1, mask)
+mask = Image.new("L", img1.size, 0)
+draw = ImageDraw.Draw(mask)
+draw.ellipse((0, 0, 179, 149), fill=255)
+im = Image.composite(img4, img1, mask)
+im.show()
 
-#mask = Image.new("L", img1.size, 0)
-#draw = ImageDraw.Draw(mask)
-#draw.ellipse((0, 0, 179, 149), fill=255)
-#mask_blur = mask.filter(ImageFilter.GaussianBlur(10))
-#im = Image.composite(img3, img1, mask_blur)
-
-#im.show()
+mask = Image.new("L", img1.size, 0)
+draw = ImageDraw.Draw(mask)
+draw.ellipse((0, 0, 179, 149), fill=255)
+mask_blur = mask.filter(ImageFilter.GaussianBlur(10))
+im = Image.composite(img4, img1, mask_blur)
+im.show()
 # 画像表示
 \end{listing}
 \end{codebox}
