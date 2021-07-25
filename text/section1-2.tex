@@ -2397,16 +2397,27 @@ from PIL import Image,ImageDraw
 
 im = Image.new('RGB', (500, 300))
 draw = ImageDraw.Draw(im)
-draw.line((50,50,150,50),fill=(255,0,0)) #引数に色指定を追加する
+draw.line((50,50,150,50),fill=(255,0,0)) #引数に色（赤）指定を追加する
 draw.line((50,100,150,150),fill=(255,0,0), width = 4)
   #引数に線の幅を指定する
+draw.ellipse((150,150,300,300),fill=(0,255,0))
+  #円を緑色で描画する。
 im.show()
 \end{listing}
+プログラムの実行結果\\
+\includegraphics[width=7cm]{images/drawimage2.png}
 \end{codebox}
+
+
 \end{pabox}
 
+ここでImageDrawオブジェクトを利用した図形の描画関数の一部を紹介します。
+凡例「pillow-1」で利用しているImageDrawオブジェクトのline以外のいくつかとなりますが、他詳しい内容は「pillow ImageDraw」で検索をしてください。
+
 \begin{grabox}{図形描画関数（メソッド）の利用}
-ImageDrawオブジェクトで呼び出す描画関数
+ImageDrawオブジェクトで呼び出す描画関数の一部
+
+point,line,poligonでは複数の座標をしていして多地点を結ぶように座標指定することができます。
 
 \begin{codebox}{点を描画}
 \begin{verbatim}
@@ -2424,7 +2435,6 @@ line( 座標 , fill= , outline= , width= ,joint= )
   joint: "curve"を指定すると折り曲げた際の線の角が丸くなる
 \end{verbatim}
 \end{codebox}
-
 \begin{codebox}{矩形（長方形）を描画}
 \begin{verbatim}
 rectangle( 座標 , fill= , outline= , width= )
@@ -2469,7 +2479,17 @@ chord( 座標 , start, end, fill= , outline= )
   outline: colorの指定
 \end{verbatim}
 \end{codebox}
+\begin{codebox}{多角形を描画}
+\begin{verbatim}
+polygon( 座標 , fill= , outline= )
+  座標: (座標x1, 座標y1, 座標x2,　座標y3........)
+  fill: colorの指定
+  outline: colorの指定
+\end{verbatim}
+\end{codebox}
 \end{grabox}
+
+\newpage
 
 それではここまでの知識を使って簡単に図形を描画してみます。
 
