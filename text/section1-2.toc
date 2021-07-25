@@ -1,4 +1,4 @@
-\contentsline {chapter}{\numberline {第1章}プログラミング入門（はじめに）}{4}%
+\contentsline {chapter}{\numberline {第1章}プログラミング言語python導入}{4}%
 \contentsline {section}{\numberline {1.1}プログラムとは？}{4}%
 \contentsline {subsection}{\numberline {1.1.1}pythonインストール}{4}%
 \contentsline {subsection}{\numberline {1.1.2}エディター（Visual Studio ode）準備}{6}%

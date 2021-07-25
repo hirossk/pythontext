@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.12.14)  26 JUL 2021 08:11
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.12.14)  26 JUL 2021 08:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -787,10 +787,10 @@ Overfull \hbox (7.6822pt too wide) in paragraph at lines 2825--2825
 Here is how much of TeX's memory you used:
  16482 strings out of 481140
  352792 string characters out of 5920653
- 732505 words of memory out of 5000000
+ 732506 words of memory out of 5000000
  32241 multiletter control sequences out of 15000+600000
  545886 words of font info for 91 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  59i,12n,92p,1023b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on section1-2.dvi (90 pages, 843564 bytes).
+Output written on section1-2.dvi (90 pages, 843616 bytes).
