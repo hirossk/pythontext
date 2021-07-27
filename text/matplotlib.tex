@@ -14,7 +14,12 @@ import matplotlib.pyplot as plt
 
 \end{verbatim}
 
-
+\begin{hipoint}{Point}
+matplotlibライブラリを利用するには次のコマンドでpythonのmatplotlibライブラリをインストールする必要があります。
+\begin{verbatim}
+pip install matplotlib
+\end{verbatim}
+\end{hipoint}
 \subsection{グラフの描画と表示}
 グラフに描画するためのデータを用意して表示してみましょう。
 
@@ -257,7 +262,10 @@ plt.show()
 \end{pabox}
 
 \begin{pabox}{numpy-5}
-numpyとmatplotlibを使ってサインカーブを書いてみましょう。
+numpyとmatplotlibを使って三角関数のsinカーブを書いてみましょう。
+
+コンピューター内部の角度は「°」ではなくradian単位を使うことが多いです。
+0°から時計回り半周で円周率π(3.141592・・・・)となり、一周で２πとなるように表現される角度の単位です。
 
 \begin{legbox}{numpy1-5.py}
 \begin{listing}{1}
@@ -282,6 +290,10 @@ plt.show()
 このような数値計算を効率よく行うためのライブラリがnumpyライブラリとなります。
 
 \section{WebAPIの利用}
+ここではWebAPIによるJSONデータの取得を行い、グラフで視覚化してみます。
+
+WebAPIを使ったJSONデータの取得方法とデータ構造は次の通りとなります。
+
 
 
 
