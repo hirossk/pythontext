@@ -124,11 +124,10 @@ plt.show()
 行列要素等の複数要素に対して効率よく処理をするためのライブラリがnumpyとなります。
 \subsection{numpyの利用}
 
-numpyの利用時にimportはasを使って「np」という別名を使うのが慣例となっています。
+numpyライブラリの利用時のimportはasを使って「np」という別名を使うのが慣例となっています。
 
 \begin{verbatim}
 import numpy as np
-
 \end{verbatim}
 
 
@@ -289,10 +288,66 @@ plt.show()
 \end{pabox}
 このような数値計算を効率よく行うためのライブラリがnumpyライブラリとなります。
 
+\newpage
 \section{WebAPIの利用}
 ここではWebAPIによるJSONデータの取得を行い、グラフで視覚化してみます。
 
-WebAPIを使ったJSONデータの取得方法とデータ構造は次の通りとなります。
+\subsection{外部JSONデータの読み込み}
+
+まずはファイルに保存した外部JSONデータの読み込みを行い、データにアクセスしてみましょう。
+
+
+\begin{pabox}{json1-1（JSONデータの読み込み）}
+graph-2の棒グラフのデータラベルに日本語でラベルを設定してみましょう。
+\begin{legbox}{jsondatasimple.json}
+jsonファイルはコメントを記載できないので連想配列要素とリスト要素を確認しておいてください。
+\begin{listing}{1}
+{
+    "class": "2年3組",
+    "name": "佐々木",
+    "score": [
+        60,
+        70,
+        50,
+        80,
+        100
+    ]
+}
+\end{listing}
+\end{legbox}
+jsonライブラリをimportし、jsonファイルをオープン後json.loadで読み込むことでdict型（連想配列）の値が取得されるので、左辺の変数に代入します。
+\begin{legbox}{json1-1.py}
+「jsondatasimple.json」を読み込んで各要素を取り出し、リストの合計を求めます。
+\begin{listing}{1}
+import json
+
+jsonfile = open('jsondatasimple.json' , 'r', encoding='utf-8') 
+#JSONデータ（dict型）として取り出す
+loaded_data = json.load(jsonfile)  
+
+#JSONデータのclass要素とname要素を取り出す
+print(loaded_data['class'])
+print(loaded_data['name'])
+
+#JSONデータのscore要素のリストを取り出し合計を求める
+total = 0
+for x in loaded_data['score']:
+    total = total + x
+
+print("goukei = " + str(total))
+\end{listing}
+実行結果
+\begin{listing}{1}
+2年3組
+佐々木
+goukei = 360
+\end{listing}
+
+\end{legbox}
+\end{pabox}
+
+\subsection{WebAPIの利用}
+
 
 WebAPIで公開されている政府や行政のデータは次のようなものがあります。
 
@@ -301,29 +356,42 @@ WebAPIで公開されている政府や行政のデータは次のようなも�
 	\item $https://data.pf-sapporo.jp/$
 \end{description}
 
-これらのデータを取得し利用する方法はurlの利用とjsonデータとしての解析を行うことで可能となります。
+これらのデータを取得し利用する方法はurlを利用してjsonデータとしてダウンロードしdict型（連想配列）のデータとして読み込むことで可能となります。
 
-今回利用するのは$https://ckan.pf-sapporo.jp/dataset/suikeijinkou$で取得できる札幌市の「将来推計人口の推移（平成17\~47年）」です。
-
-
-\begin{verbatim}
-import urllib
-import urllib.request
-import json
-
-url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?resource_id=
-       710b0236-6b28-441e-8500-f5c9be2e4c4a'
-response = urllib.request.urlopen(url)
-content = json.loads(response.read().decode('utf8'))
-
-\end{verbatim}
+今回利用するのは$https://ckan.pf-sapporo.jp/dataset/suikeijinkou$で取得できる札幌市の「将来推計人口の推移（平成17～47年）」です。
 
 Excelでcsvファイルを読み込むと次の通りとなります。
 
 \includegraphics[width=14cm]{images/webapi1.png}
 
-JSONによる文書構造
-\begin{verbatim}
+このデータをWebAPIによる読み込みをしてみましょう。
+
+\begin{pabox}{webapi1-1（WebAPIによるJSONデータの読み込み）}
+将来推計人口の推移（平成17～47年）のWebAPI用のURLからデータを読み込むプログラムです。
+変数contentにdict型のデータとして取り込まれます。
+\begin{legbox}{webapi1-1.py}
+\begin{listing}{1}
+import urllib
+import urllib.request
+import json
+
+url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?
+       resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a'
+response = urllib.request.urlopen(url)
+content = json.loads(response.read().decode('utf8'))
+
+print(content)
+\end{listing}
+実行して結果を確認してください。
+\end{legbox}
+\end{pabox}
+
+
+
+WebAPIで用いられるJSONによる文書構造の例は次の通りです。
+
+\begin{grabox}{WebAPIで利用されるJSONの構造例}
+\begin{listing}{1}
 #辞書構造
 {
     "help": --
@@ -341,11 +409,15 @@ JSONによる文書構造
         "total": 9,
         "total_was_estimated": false
 }
-\end{verbatim}
+\end{listing}
+\end{grabox}
+それでは具体的にＷｅｂＡＰＩのデータ構造を見てみましょう。
 
-\begin{verbatim}
+\begin{grabox}{JSON札幌市の将来推計人口の推移（平成17～47年）の抜粋}
+\begin{listing}{1}
 {
-    "help": "https://ckan.pf-sapporo.jp/api/3/action/help_show?name=datastore_search",
+    "help": "https://ckan.pf-sapporo.jp/api/3/action/help_show?
+　　　　　　　name=datastore_search",
     "success": true,
     "result": {
         "include_total": true,
@@ -402,20 +474,106 @@ JSONによる文書構造
             ----省略----
         ],
         "_links": {
-            "start": "/api/3/action/datastore_search?resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a",
-            "next": "/api/3/action/datastore_search?resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a&offset=100"
+            ----省略----
         },
         "total": 9,
         "total_was_estimated": false
     }
 }
-\end{verbatim}
+\end{listing}
+\end{grabox}
 
-このデータ構造からデータを取得する場合
+このデータ構造からデータを取得する場合は
 
-dataからdata["result"] で辞書データで値を取り出すと"result"で参照される連想配列のデータが取得できます。
-data["result"]からdata["result"]["records"]で辞書データ９個がリストで取得できます。
+content辞書データからcontent["result"] で値を取り出すと"result"で参照されるdict型のデータが取得できます。
 
-これらのデータから総人口の推計を取り出すには
-data["result"]["records"][2]とすることで総人口を取得することができます。
+content["result"]からcontent["result"]["records"]で参照される辞書データ９個のリストデータが取得できます。（角カッコ「[]」で囲まれた要素はリストとして扱われます。）
 
+これらのデータから総人口の推計を取り出すにはcontent["result"]["records"][2]を指定することで総人口の連想配列を取得することができます。
+\begin{pabox}{webapi1-2（WebAPIによるJSONデータの読み込み）}
+将来推計人口の推移（平成17～47年）のWebAPI用のURLからデータを読み込むプログラムです。
+変数contentにdict型のデータとして取り込まれます。
+\begin{legbox}{webapi1-2.py}
+\begin{listing}{1}
+import urllib
+import urllib.request
+import json
+
+url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?
+       resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a'
+response = urllib.request.urlopen(url)
+content = json.loads(response.read().decode('utf8'))
+
+
+#値を取り出すための変数を用意
+recode = content["result"]["records"][2]
+#dictデータを順番に取り出す
+for v in recode:
+    print(v + ":" + str(recode[v]))
+\end{listing}
+実行結果
+\begin{listing}{1}
+_id:3
+項目:総人口
+17年（2005）:1,881（100.0）
+22年（2010）:1,914（100.0）
+27年（2015）:1,937（100.0）
+32年（2020）:1,933（100.0）
+37年（2025）:1,911（100.0）
+42年（2030）:1,871（100.0）
+47年（2035）:1,818（100.0）
+\end{listing}
+値を取り出す13行目から16行目は次のようにitems（）メソッドを利用してkeyと値を取り出すこともできます。
+\begin{listing}{1}
+recode = content["result"]["records"][2]
+#recordのitems()メソッドでkeyと値をkとvに入れることができる
+for k, v in recode.items():
+    print(k + ":" + str(v))
+\end{listing}
+\end{legbox}
+\end{pabox}
+
+ここまでに取得したデータを使って推移および将来推計をグラフ化しましょう。
+
+前述の「webapi1-2.py」の15,16行目の人口推計データを基にして数値に変換しmatplotlibに設定してみましょう。
+
+\begin{pabox}{webapi1-2（WebAPIによるJSONデータの読み込み）}
+将来推計人口の推移（平成17～47年）のWebAPI用のURLからデータを読み込むプログラムです。
+変数contentにdict型のデータとして取り込まれます。
+\begin{legbox}{webapi1-2.py}
+\begin{listing}{1}
+import urllib
+import urllib.request
+import json
+import re
+import matplotlib.pyplot as plt
+import japanize_matplotlib
+
+url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a'
+response = urllib.request.urlopen(url)
+content = json.loads(response.read().decode('utf8'))
+
+#値を取り出すための変数を用意
+recode = content["result"]["records"][2]
+#データラベルを初期化
+label = []
+#グラフデータを初期化
+data = []
+
+listdata = list(recode.items()) 
+listdata.pop(0)
+listdata.pop(0)
+for k, v in listdata:
+    l = re.search(r'\d+年', k).group()
+    label.append(l)
+    v = v.replace(',','')
+    n = int(re.search('[0-9]+', v).group())
+    data.append(n*1000)
+print(label, data)
+x = [ 1, 2, 3, 4, 5, 6, 7 ]
+plt.bar( x, data ,tick_label = label)
+
+plt.show()
+\end{listing}
+\end{legbox}
+\end{pabox}
