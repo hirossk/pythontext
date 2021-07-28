@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.12.14)  28 JUL 2021 12:41
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.12.14)  28 JUL 2021 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,51 +791,69 @@ File: images/graph6.png Graphic file (type bmp)
  [84] [85]
 File: images/webapi1.png Graphic file (type bmp)
 <images/webapi1.png>
-)
-Overfull \hbox (0.72308pt too wide) in paragraph at lines 323--2635
+
+Overfull \hbox (0.72308pt too wide) in paragraph at lines 323--324
 [][] 
  []
 
 [86]
+Overfull \hbox (44.6337pt too wide) in paragraph at lines 348--348
+[]    \OT1/cmtt/m/n/10 "help": "https://ckan.pf-sapporo.jp/api/3/action/help_sh
+ow?name=datastore_search",[] 
+ []
+
+[87]
+Overfull \hbox (133.88292pt too wide) in paragraph at lines 405--405
+[]            \OT1/cmtt/m/n/10 "start": "/api/3/action/datastore_search?resourc
+e_id=710b0236-6b28-441e-8500-f5c9be2e4c4a",[] 
+ []
+
+
+Overfull \hbox (181.1325pt too wide) in paragraph at lines 406--406
+[]            \OT1/cmtt/m/n/10 "next": "/api/3/action/datastore_search?resource
+_id=710b0236-6b28-441e-8500-f5c9be2e4c4a&offset=100"[] 
+ []
+
+[88]) [89]
 \openout2 = `class.aux'.
 
  (./class.tex
 第4章
-[87
+[90
 
 
 
 ]
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [88]
-[89] [90]
+ [91]
+[92] [93]
 File: images/ClassExtends.png Graphic file (type bmp)
 <images/ClassExtends.png>
- [91]) [92]
+ [94]) [95]
 第5章
-[93
+[96
 
 
-] [94]
+] [97]
 Overfull \hbox (7.6822pt too wide) in paragraph at lines 2744--2744
 [][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
 "Scientific"][] 
  []
 
-[95] [96]
+[98] [99]
 Overfull \hbox (7.6822pt too wide) in paragraph at lines 2793--2793
 [][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
 "Scientific"][] 
  []
 
-[97] [98]
+[100] [101]
 Overfull \hbox (7.6822pt too wide) in paragraph at lines 2838--2838
 [][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
 "Scientific"][] 
  []
 
-[99] [100] (./section1-2.aux (./matplotlib.aux) (./class.aux)) ) 
+[102] [103] (./section1-2.aux (./matplotlib.aux) (./class.aux)) ) 
 Here is how much of TeX's memory you used:
  16558 strings out of 481140
  354095 string characters out of 5920653
@@ -845,4 +863,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  59i,12n,92p,1023b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on section1-2.dvi (101 pages, 966420 bytes).
+Output written on section1-2.dvi (104 pages, 970252 bytes).
