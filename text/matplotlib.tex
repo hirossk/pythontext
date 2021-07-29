@@ -549,7 +549,8 @@ import re
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 
-url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a'
+url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_search?
+      resource_id=710b0236-6b28-441e-8500-f5c9be2e4c4a'
 response = urllib.request.urlopen(url)
 content = json.loads(response.read().decode('utf8'))
 
