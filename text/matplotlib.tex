@@ -23,7 +23,7 @@ pip install matplotlib
 \subsection{グラフの描画と表示}
 グラフに描画するためのデータを用意して表示してみましょう。
 
-
+\newpage
 \begin{pabox}{graph-1（折れ線グラフ）}
 ６要素のデータ[100,50,200,300,350,500]の折れ線グラフを描画してみましょう。
 基本的なグラフはx軸の値とｙ軸の値を指定することで簡単に表示することができます。
@@ -45,6 +45,7 @@ plt.show()
 
 \end{legbox}
 \end{pabox}
+\newpage
 
 \begin{pabox}{graph-2（棒グラフ）}
 ６要素のデータ[200,220,240,220,260,210]の棒グラフを描画してみましょう。
@@ -55,8 +56,7 @@ import matplotlib.pyplot as plt
 
 x = [ 1, 2, 3, 4, 5, 6 ]
 data = [ 200, 220, 240, 220, 260, 210 ]
-label = [ '西区']
-#データラベルを指定することもできる
+
 plt.bar( x, data )
 #barを使ってデータを指定します。
 plt.show()
@@ -70,7 +70,7 @@ plt.show()
 \end{legbox}
 \end{pabox}
 
-
+\newpage
 \begin{pabox}{graph-3（円グラフ）}
 ６要素のデータ[100,200,300,400,500,600]の円グラフを描画してみましょう。
 \begin{legbox}{graph1-3.py}
@@ -90,17 +90,14 @@ plt.show()
 
 \end{legbox}
 \end{pabox}
-
+\newpage
 \begin{pabox}{graph-4（データラベル）}
 graph-2の棒グラフのデータラベルに日本語でラベルを設定してみましょう。
 \begin{legbox}{graph1-4.py}
 \begin{listing}{1}
 import matplotlib.pyplot as plt
-
-#日本語フォントを設定
-from matplotlib import rcParams
-rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = ['Yu Gothic', 'Meirio']
+import japanize_matplotlib
+#日本語matplotlibを設定
 
 x = [ 1, 2, 3, 4, 5, 6 ]
 data = [ 200, 220, 240, 220, 260, 210 ]
@@ -195,7 +192,7 @@ print(np.random.rand(10))
 
 \end{pabox}
 
-
+\newpage
 \begin{pabox}{numpy-3}
 numpyを使った条件判定を見てみましょう。
 配列要素として乱数を生成し特定の値がいくつ含まれているか数えてみましょう。
@@ -224,7 +221,7 @@ print(np.count_nonzero(ransu == 3))
 \end{pabox}
 
 【高等学校情報科「情報1教員研修用教材(本編)】第3章で用いられている確定モデルと確率モデルに出てくるnumpyとmatplotlibについて今まで学習した内容と合わせて確認しましょう。
-
+\newpage
 \begin{pabox}{numpy-4}
 参考資料「【高等学校情報科「情報1」教員研修用教材(本編)】第3章」１３９ページのサンプルプログラムを修正し、描画を見ながら確率モデルを確認しましょう。
 
@@ -535,12 +532,12 @@ for k, v in recode.items():
 
 ここまでに取得したデータを使って推移および将来推計をグラフ化しましょう。
 
-前述の「webapi1-2.py」の15,16行目の人口推計データを基にして数値に変換しmatplotlibに設定してみましょう。
+前述の「webapi1-3.py」の15,16行目の人口推計データを基にして数値に変換しmatplotlibに設定してみましょう。
 
-\begin{pabox}{webapi1-2（WebAPIによるJSONデータの読み込み）}
+\begin{pabox}{webapi1-3（WebAPIによるJSONデータの読み込み）}
 将来推計人口の推移（平成17～47年）のWebAPI用のURLからデータを読み込むプログラムです。
 変数contentにdict型のデータとして取り込まれます。
-\begin{legbox}{webapi1-2.py}
+\begin{legbox}{webapi1-3.py}
 \begin{listing}{1}
 import urllib
 import urllib.request
@@ -565,7 +562,7 @@ listdata = list(recode.items())
 listdata.pop(0)
 listdata.pop(0)
 for k, v in listdata:
-    l = re.search(r'\d+年', k).group()
+    l = re.search('[0-9]+年', k).group()
     label.append(l)
     v = v.replace(',','')
     n = int(re.search('[0-9]+', v).group())
@@ -576,5 +573,33 @@ plt.bar( x, data ,tick_label = label)
 
 plt.show()
 \end{listing}
+\end{legbox}
+\end{pabox}
+
+もう一つ気象庁のデータを読み取り札幌エリアの天気概況を表示してみましょう。
+\begin{pabox}{webapi1-4（WebAPIによるJSONデータの読み込み）}
+気象庁の札幌エリアのデータを読み取り表示するプログラムを
+\begin{legbox}{webapi1-4.py}
+\begin{listing}{1}
+import urllib
+import urllib.request
+import json
+#詳細データ
+url = 'https://www.jma.go.jp/bosai/forecast/data/forecast/
+      016000.json'
+#概況
+url = 'https://www.jma.go.jp/bosai/forecast/data/
+      overview_forecast/016000.json'
+response = urllib.request.urlopen(url)
+content = json.loads(response.read().decode('utf8'))
+
+print(content["headlineText"])
+
+\end{listing}
+実行結果(ある日の結果)
+\begin{verbatim}
+空知地方では、２９日は大雨による低い土地の浸水や河川の増水に、石狩・空知・後志地方では、２９日は落雷や突風、ひょう、急な強い雨に
+、３０日にかけて濃い霧による交通障害に注意してください。
+\end{verbatim}
 \end{legbox}
 \end{pabox}
