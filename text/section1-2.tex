@@ -612,7 +612,7 @@ False
 \end{center}
 \end{table}
 
-
+\newpage
 それでは条件式を使った式の評価を見ていきましょう。
 \begin{grabox}{式の評価（条件式１）}
 \begin{listingcont}
@@ -683,7 +683,7 @@ True
 
  {\gt 対話実行}で表示されている「$>>>$」の後に入力する命令や式は実行され「評価」されます。
 \end{hipoint}
-
+\newpage
 \begin{grabox}{変数の評価}
 \begin{listing}{1}
 >>> x = 1
@@ -770,6 +770,7 @@ if文の意味が理解出来たらまとまった手順としてプログラム
 
 if文では真の手続きのみ必要で偽の手続きを記載する必要の無い場合があります。
 その時のif文は書き方２を確認してください。
+\newpage
 \begin{grabox}{if文の書き方２（偽の手続きがない場合）}
 \begin{listing}{1}
 if 条件式:
@@ -854,6 +855,7 @@ yの値が大きければ"y is large."と表示、等しければ"x and y are eq
 ここでxとyはプログラム中でそれぞれ値を入れてif文が正しく動作することを確認しましょう。
 ファイル名「plactice3.py」として保存しましょう。
 \end{plabox}
+\newpage
 \subsection{if文（複合条件）}
 複数の条件が関係する条件式も利用することができます。
 
@@ -1196,14 +1198,13 @@ python5-3.pyをファイル名「plactice7.py」として別名で保存しま�
 
 
 \end{plabox}
-
+\newpage
 \subsection{繰り返し処理の利用}
 　繰り返しの中にキーボードからの入力を処理する機能をいれて、プログラムを短くしてみましょう。
 
 先ほどの「凡例input-1」を10科目の平均表示に変更することを考えてみます。
 
 ※　悪い例「人がやる繰り返し」です。変数名が増えますので、ちょっと手抜きします。
-\newpage
 \begin{grabox}{人がやる繰り返し}
 \begin{listing}{1}
 x = input ( "subject1 = " )
@@ -1403,7 +1404,6 @@ subjects = ["Mathematics”,”English”,”Social”,”Japanese”,”Scienti
 \begin{hipoint}{Point}
 配列を番号で参照するときの番号を「添字」もしくは「インデックス」と呼びますので覚えておきましょう。
 \end{hipoint}
-\newpage
 for文と配列を使って効率よく出力処理してみましょう。
 
 \begin{pabox}{list-1}
@@ -1533,7 +1533,7 @@ for n in range(0,5):
 \end{listing}
 \end{legbox}
 \end{pabox}
-
+\newpage
 \subsubsection{練習問題}
 \begin{plabox}{Plactice}
 ここまでの学習内容を復習して5科目の点数を入力し、0点未満や100点を超える点数は「error」と表示し入力された場合は得点に-1を設定するようにしましょう。
@@ -1562,7 +1562,7 @@ Scientific: -1 error
 \end{verbatim}
 \end{codebox}
 \end{plabox}
-
+\newpage
 \subsection{２次元配列}
 
 
@@ -1583,7 +1583,7 @@ c = [80, 100]
 \end{verbatim}
 
 どちらの考え方も間違っていませんが、科目が増えたり人数が増えたときに効率よく扱うことができません。
-\newpage
+
 \subsubsection{２次元配列の宣言}
 
 一人分のデータをリストとしてさらにリストの中に入れることができます。
@@ -1673,6 +1673,7 @@ print ("英語の合計点数", e)
 一人分のデータをvに代入することになります。
 この一人分のデータは数学と英語の得点の配列となりますので、{\tt v[0]}（数学の点数）{\tt v[1]}（英語の点数）として参照することができます。
 \end{pabox}
+\newpage
 また二次元配列を参照しながら処理を行うには添字を使う方法もあります。
 \begin{pabox}{list-5}
 添え字を使って前の凡例と同「list-4」じ機能を作ってみましょう。
@@ -1697,6 +1698,7 @@ print ("英語の合計点数", e)
 \end{pabox}
 
 最近のプログラムでは配列に入っている要素数が未定でもプログラムの変更が少ない「list-5」のプログラムが利用されることが多いようです。
+\newpage
 \subsubsection{練習問題}
 \begin{plabox}{Plactice}
 次のプログラムを参考にして2次元配列に表のような点数を5名分追加して数学と英語の平均点を求め出力するプログラムを作成しましょう。
@@ -2036,7 +2038,7 @@ print( a )
 
 関数では深い階層の呼び出しも可能です。
 いろいろと試してみてわかりやすいプログラムを組む練習をしてみましょう。
-
+\newpage
 \subsubsection{練習問題}
 \begin{plabox}{Plactice}
 次の５名のテストの結果（平均点65点）を入力して、分散を求めるプログラムを作りましょう。
@@ -2630,6 +2632,7 @@ im.show()
 \end{codebox}
 \end{pabox}
 
+\newpage
 
 \include{matplotlib}
 
