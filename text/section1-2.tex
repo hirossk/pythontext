@@ -133,83 +133,27 @@ python特徴の説明
 \end{itemize}
 
 \subsection{pythonインストール}
-今回利用するpython言語の環境設定は次の通りとなります。
-
-今回の教室内の設定およびインストールは済ませていますが、ご自宅でインストールする場合は次の手順が参考になります。
-
-\begin{description}
-	\item $https://www.python.jp/install/windows/install\_py3.html$
-\end{description}
-
-手順に従い$https://www.python.org/downloads/windows/$より、パッケージをダウンロードします。
-
-\includegraphics[width=10cm]{images/image11.png}
-
-\begin{itemize}
-	\item ・Download Windows installer（32-bit）
-	\item ・Download Windows installer（64-bit）
-
-\end{itemize}
+今回利用するpython言語はご案内の通りGoogle Colaboratoryを利用します。
 
 
+\includegraphics[width=10cm]{images/colab01.png}
 
-いずれかを選択しダウンロードします。
+Webで起動すると次の画面が表示されます。
 
-\includegraphics[width=10cm]{images/image8.png}
+\includegraphics[width=12cm]{images/colab02.png}
 
-※画面は64bit版の3.9.6です。
-\begin{enumerate}	
-	\item 「Add Python 3.x to PATH」 をチェックしてください。
-	\item Install now をクリックしてインストールをしてください。
-\end{enumerate}
+準備はこれにて完了です。
 
-\subsection{エディター（Visual Studio ode）準備}
+早速「ノートブックを新規作成」をしましょう。
 
-次のURLを参照し「Visual Studio Code（vscode）」をダウンロードを行います。
+\includegraphics[width=8cm]{images/colab03.png}
 
-\begin{description}
-	\item $https://code.visualstudio.com/download$
-\end{description}
+ここで「コードセル」領域にプログラムを入力することができます。
 
-\includegraphics[width=10cm]{images/image9.png}
+\includegraphics[width=8cm]{images/colab04.png}
 
-User Installerでそれぞれ32bit,64bitのいずれかを選択します。
-
-\includegraphics[width=10cm]{images/image12.png}
-
-
-あとはインストールするだけです。
-
-\subsubsection{vscodeの環境設定}
-
-今回のプログラミングで利用するpythonの拡張機能をインストールします。
-
-日本語表示のために日本語拡張機能のインストールを行います。
-
-
-
-\includegraphics[width=10cm]{images/image2.png}
-
-起動画面左下の拡張機能をクリックし、検索キーワードに「japanese」と入力し
-「japanese Language Pack for Visual.....」を選択し「install」します。
-
-
-ここでvscodeを再起動します。
-
-
-\includegraphics[width=10cm]{images/image6.png}
-
-次に日本語拡張機能と同様に検索キーワードに「python」を入力することで今回プログラミングで利用するpythonの拡張機能をインストールします。
-
-\includegraphics[width=10cm]{images/image10.png}
-
-インストール後に
-再読み込みしてアクティブにするを選択してpython拡張を有効にします。
-
-
-これでインストールは完了です。
-
-
+実行ボタンを押して動作確認しましょう。
+少し待ち時間がかかりますが、無事結果が表示されます。
 
 
 \chapter{プログラミング 基礎}
@@ -221,30 +165,19 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
 
  コンピューターとは電気電子の作用によって動作する汎用計算機と訳されます。
  
- pythonでは一つ一つの命令を確認しながら実行できる「対話実行モード（インタラクティブモード）」と
- プログラムファイルを作成して実行する「スクリプトによる実行」を使うことができます。
+ Colaboratoryでは一つ一つの命令を確認しながら「コードセルによる実行」ができます。
  
- これらのモードを利用することでコンピューターへ命令するというプログラミングの基礎を効率よく学ぶことができます。
+
 
 \begin{pabox}{pythonの実行方法}
-対話実行の場合は入力待ちとなり「$>>>$」の後ろに直接命令や計算式を入力することができます。
-\begin{grabox}{対話実行}
+Google Colaboratoryではコードセルに直接命令を入力することができます。
+\begin{grabox}{実行}
 \begin{verbatim}
->>> x = 10
->>> print(x)
-10
->>> exit() #または　Ctrl+zで終了します。
-\end{verbatim}
-\end{grabox}
-\newpage
-プログラム（スクリプト）を記述して実行する場合は「python」コマンドに続いて保存したファイル名を指定します。
+x = 10
+print(x)
+#ここで実行ボタンを押します。
 
-Visual Studio Code（vscode）でpython拡張を導入している場合は「F5」キーで実行することができます。
-\begin{grabox}{スクリプトによる実行}
-\begin{verbatim}
-C:\Users\username> python ファイル名.py
 10
-C:\Users\username> 
 \end{verbatim}
 \end{grabox}
 
@@ -318,40 +251,18 @@ y = 0 #これはif文のどちらを通過しても必ず実行されます。
 \end{legbox}
 pythonでは左側のインデントによってどこからどこまでが一連の処理か判断しています。
 \end{pabox}
-今回の授業で利用するVisual Studio Codeではpythonで記述するインデントを直前の行と自動で合わせる機能を持っています。
 
 \subsection{pythonを使った計算}
 
- まずは {\gt 対話実行}による計算を行ってみましょう。
+ まずは {\gt コードセル}による計算を行ってみましょう。
 
-\includegraphics[width=6cm]{images/image1.png}
 
-vscodeの「表示」メニューから「ターミナル」を選択します。
+次の例の通りコードセルに計算式を入力することですぐに計算結果を取得することができます。
 
-右下にターミナルが表示されますので、「py」コマンドを入力することで対話実行を起動します。
+\includegraphics[width=10cm]{images/colab05.png}
 
-\includegraphics[width=13cm]{images/image7.png}
-
-次の例の通り「$>>>$」に続いて計算式を入力することですぐに計算結果を取得することができます。
-
-\begin{grabox}{対話実行pythonの起動：例}
-\begin{listingcont}
-c:\\～> py
-Python 3.9.6 ～省略～ on win32
-Type "help", ～省略～
->>> 1 + 2 #>>>の後に計算式を入力します。
-3
->>> 3 * 4
-12
->>> 1 / 3
-0.3333333333333333
->>> 1 +  1 / 4 
-1.25
->>> 4 ** 2
-16
->>> ( 1 + 2 + 3 ) / 2
-3.0
-\end{listingcont}
+\begin{grabox}{コードセルによるpython実行：例}
+\includegraphics[width=12cm]{images/colab06.png}
 \end{grabox}
 
 ここまでのように算式を入力していくと正しい結果を得られることを確認することができます。
@@ -370,16 +281,7 @@ Type "help", ～省略～
 早速先程の続きで変数に値を代入する方法を見てみましょう。
 
 \begin{grabox}{変数の確認}
-\begin{listingcont}
->>> x = 10
->>> x
-10
->>> x / 4
-2.5
->>> y = x - 5
->>> y
-5
-\end{listingcont}
+\includegraphics[width=10cm]{images/colab07.png}
 \end{grabox}
 最初の行の「x = 10」はxと10が等しいという意味ではなく左辺xに右辺の10という数値を入れておくという意味になります。（代入といいます。）
 
@@ -408,16 +310,7 @@ a ～ z のアルファベット（大文字も可）　\\ \hline
 
 
 \begin{grabox}{イコールの考え方等式}
-\begin{listingcont}
->>> 10 = x
-  File "<stdin>", line 1
-SyntaxError: can't assign to literal
- ※ SyntaxError（エラー）になります。
-
->>> x = x - 1
->>> x
-9
-\end{listingcont}
+\includegraphics[width=10cm]{images/colab08.png}
 \end{grabox}
 等式として等しいという意味ではないので右辺の計算結果を左辺に代入という解釈を行います。したがって右辺には左辺と同じ変数を利用して
 計算式を書くことができます。
@@ -427,18 +320,10 @@ SyntaxError: can't assign to literal
 \subsection{式と計算}
  電卓では簡単にできないこんな計算もできます。
 \begin{grabox}{桁の多い計算}
-\begin{listingcont}
->>> 2 ** 32
-4294967296
->>> 2 ** 64
-18446744073709551616
->>> 2 ** 128
-（実行結果を確認してください）
-  340澗2823溝6692穰0938じょ4634垓6337京4607兆4317億6821万1456
->>> 2 ** 256
-（実行結果を確認してください）
+\includegraphics[width=12cm]{images/colab09.png}
+\begin{verbatim}
   ！？（無量大数を超えます）
-\end{listingcont}
+\end{verbatim}
 \end{grabox}
 
 ここまでであればExcelでもできそうです。
@@ -459,85 +344,33 @@ SyntaxError: can't assign to literal
 1～5までの合計（1 + 2 + 3 + 4 + 5）を計算するプログラムを実行しましょう。
 
 \begin{grabox}{同じような手順の繰り返し}
-\begin{listing}{1}
->>> x = 1 
->>> x = x + 2
->>> x = x + 3
->>> x = x + 4
->>> x = x + 5
->>> x
-15
-\end{listing}
+\includegraphics[width=10cm]{images/colab09-1.png}
 \end{grabox}
-※ ヒント「↑」キーを押すと前の行が表示され編集をすることができます。
 
 ここではプログラムで画面に出力する方法を学びます。
-いままでも {\gt 対話実行}では結果の出力はできていましたが、明示的に出力する方法を学びます。
+いままでも {\gt コードセルによる実行}では結果の出力はできていましたが、明示的に出力する方法を学びます。
 
 
 \subsection{画面に出力する方法}
 結果を出力するprint文を使ってみます。
 \begin{grabox}{出力命令}
-\begin{listingcont}
->>> print(x)
-15
->>> x
-15
-\end{listingcont}
+\includegraphics[width=7cm]{images/colab10.png}
 \end{grabox}
-「print(x)」も「x」もxの値が出力されます。違いについては次のセクション「ファイルに保存」の中で説明します。
+「print(x)」も「x」もxの値が出力されます。違いについては次のセクション「コードセルでの出力」の中で説明します。
 
 
-\subsection{ファイルへの保存}
-これらのプログラムをひとまとまりの処理として書いてファイルに保存してみましょう。
+\subsection{コードセルで出力}
+これらのプログラムをひとまとまりの処理としてコードセルに記述してみましょう。
 
-\subsubsection{新規ファイルの作成}
+\subsubsection{コードセルで複数の出力の作成}
 
-ファイル名：python1-1.pyとして保存します。
-
-\includegraphics[width=8cm]{images/image5.png}
-
-
-vscodeの「ファイル」メニュー「新規ファイル」を選択します。
-
-エディターで次のプログラムを入力します。行番号は自動で付番されます（プログラムの実行に影響はありません）ので、参考にしてください。
-
-\begin{grabox}{保存プログラム（python1-1.py）}
-\begin{listing}{1}
-x = 1
-x = x + 2
-x
-\end{listing}
+\begin{grabox}{プログラム名（python1-1.py）}
+\includegraphics[width=7.5cm]{images/colab11.png}
 \end{grabox}
-入力が完了しましたら保存の操作を行います。
+実行すると「print( x )」の値だけが出力されることが分かります。
 
-\includegraphics[width=8cm]{images/image4.png}
-
-vscodeの「ファイル」メニュー「名前を付けて保存...」を選択します。
-
-\includegraphics[width=10cm]{images/image13.png}
-
-ファイル名「python1-1.py」と入力して保存を選択します。
-
-保存が完了しましたら、{\gt 対話実行}で利用したターミナルに切り替えます。
-
-\begin{hipoint}{Point}
-{\gt 対話実行}で動作している場合はターミナルで「$>>>　$」の後に、CTRL+Zを押すか「exit()」を実行することでコマンド実行状態に変更できます。
-\end{hipoint}
-\begin{grabox}{出力なしの実行}
-\begin{listing}{1}
-c:\\～> python python1-1.py
-c:\\～>
-\end{listing}
-\end{grabox}
-※ 計算はされていますが、表示されません。
-
-それでは出力を行うためにもう一度ファイルを作成しprint文を追加してみましょう。
-
-※　ファイル作成の手順は新規ファイルの作成を参照してください。
-
-ファイル名：python1-2.py
-\begin{grabox}{保存プログラム（python1-2.py）}
+明示的に変数の内容を確認するにはprint関数を利用します。
+\begin{grabox}{プログラム名（python1-2.py）}
 \begin{listing}{1}
 x = 1
 x = x + 2
@@ -545,20 +378,12 @@ print (x)
 \end{listing}
 \end{grabox}
 
-実行方法
-\begin{grabox}{出力ありの実行}
-\begin{listing}{1}
-c:\\～> python python1-2.py
-3
-\end{listing}
-\end{grabox}
-※ 計算結果が表示されました。
 
 
 まとまった手順をプログラムとして書いた場合、結果を出力する手続きを実行しなければ出力されません。プログラムで結果を出力する方法は「print関数」を利用することを覚えておきましょう。
 
 
-※ {\gt 対話実行}で変数の値を出力するために変数名だけでよかった理由は式の評価した値が表示されたためです。
+※ 今まで実行結果として変数名だけで内容が表示された理由は式の評価した値が結果として表示されたためです。
 
  評価についてはもう少し先に進めてから確認します。
 
@@ -566,35 +391,19 @@ c:\\～> python python1-2.py
 \begin{plabox}{Plactice}
 底辺xを3cm、高さyを4cmとする三角形の面積を求め出力するプログラムを作成しましょう。
 
-ファイル名「plactice1.py」として保存しましょう。
 \end{plabox}
 
 
 \section{変数と式の評価}
 
 
-もう一度{\gt 対話実行}で動作確認しています。
-\begin{grabox}{式}
-\begin{listing}{1}
-c:\\～> py
->>> x = 1
->>> x
-1
-\end{listing}
-\end{grabox}
-※ ここまでは復習です。
 \subsection{式の評価}
 ここで式（条件式）の評価について学びます。（まずは不等号から）
 \begin{grabox}{式の評価}
-\begin{listingcont}
->>> x < 10
-True
->>> x > 10
-False
-\end{listingcont}
+\includegraphics[width=7.5cm]{images/colab12.png}
 \end{grabox}
 ※ 条件式が成立していると「True」が不成立であれば「False」になっていることがわかります。
-
+\newpage
 条件式で利用される主な比較演算子
 \begin{table}[h]
  \begin{center}
@@ -612,93 +421,24 @@ False
 \end{center}
 \end{table}
 
-\newpage
 それでは条件式を使った式の評価を見ていきましょう。
 \begin{grabox}{式の評価（条件式１）}
-\begin{listingcont}
->>> x <= 1
-True
->>> x >= 2
-False
->>> x == 1
-True
->>> x == 2
-False
->>>  x != 1
-False
-\end{listingcont}
+\includegraphics[width=7.5cm]{images/colab13.png}
 \end{grabox}
 
-当たり前ですが、こんな式の評価もできます
-\begin{grabox}{式の評価（条件式２）}
-\begin{listingcont}
->>> 60 < 70
-True
->>> 60 > 70
-False
-\end{listingcont}
-\end{grabox}
 ほかの言語では書けないかもしれませんが次のような式の条件式も可能です。
 \begin{grabox}{{式の評価（条件式３）}}
-\begin{listing}{1}
->>> x = 5
->>> 1 < x < 10
-True
->>> 1 < x < 5
-False
-\end{listing}
+\includegraphics[width=6.5cm]{images/colab14.png}
 \end{grabox}
 ※ ほかの言語では「1 $<$ x and 1 $<$ 10」など「かつ」条件で記入することが多いです。
 
 文字や文字列も比較できます。
 \begin{grabox}{{式の評価（条件式４）}}
-\begin{listing}{1}
->>> a = "z"
->>> b = "z"
->>> a == b
-True
->>> c = "y"
->>> a == c
-False
->>> a > c # "z" > "y" を辞書順で評価します。
-True
->>> a < c
-False
->>> a = "abc"
->>> b = "abc"
->>> c = "azc"
->>> a == b
-True
->>> a == c
-False
->>> a > c # "abc"と"azc"の辞書順の評価
-False
->>> a < c
-True
-\end{listing}
+\includegraphics[width=9cm]{images/colab15.png}
 \end{grabox}
 
 
-\begin{hipoint}{Point}
-
- {\gt 対話実行}で表示されている「$>>>$」の後に入力する命令や式は実行され「評価」されます。
-\end{hipoint}
-\newpage
-\begin{grabox}{変数の評価}
-\begin{listing}{1}
->>> x = 1
-※ xに1を代入するという命令が実行された。
->>> x
-1
-※ xを評価した結果が表示された。
->>> print ( x )
-1
-※ xを表示する命令が実行された。
-\end{listing}
-\end{grabox}
-
-このように {\gt 対話実行}では条件式や計算式の評価結果を表示しますので、print命令による出力と違いがわかりません。
-プログラムをファイルに保存して実行する場合は条件式や計算式の評価結果は出力されませんので、print命令によって明示的に出力する必要があります。
+このように {\gt コードセルによる実行}では最後の評価結果を表示しますので、コードセルの途中で出力したい場合はprint命令によって明示的に出力する必要があります。
 
 \subsection{if文（場合分けの処理）}
 
@@ -734,21 +474,8 @@ else:
 
 変数xに学生Aさんの数学の得点を入力します（今回は60点とします）。このテストでは50点以上を合格としますので、Aさんの数学の得点が合格なのか不合格なのか判定して出力するプログラムを作りましょう。
 
-※　ここでは {\gt 対話実行}で場合分けの処理を実行してみます。
-
 \begin{legbox}{if-ex.py}
-\begin{listing}{1}
->>> x = 60
->>> if x >= 50:
-...      print ( " goukaku " ) # 左側のインデント空白は
-                                 「Tab」キー（１回）で入力します。
-... else:
-...      print ( " fugoukaku " )
-...　#インデントなしで「Enter」キーを押すと式を評価して結果を
-     表示します。
-goukaku
->>>
-\end{listing}
+\includegraphics[width=12cm]{images/colab16.png}
 \end{legbox}
 
 
@@ -761,9 +488,7 @@ if文の意味が理解出来たらまとまった手順としてプログラム
 
 \subsubsection{練習問題}
 \begin{plabox}{Plactice}
-新規ファイルを作成して「凡例if-1」を保存して実行してみましょう
-
-ファイル名「plactice2.py」として保存しましょう。
+「凡例if-1」を実行してみましょう
 \end{plabox}
 
 他にもif文の書き方はいくつかありますので、確認してみましょう。
@@ -803,7 +528,6 @@ else:
 それではifを使って判定するプログラムを作ってみましょう。
 \begin{pabox}{if-2}
 変数xに学生Aさんの数学の得点を入力します（今回は60点とします）。このテストでは80点以上を「A」とし、60点以上を「B」とし、40点以上を「C」、40点未満を「D」と評価します。Aさんの数学の得点の評価を判定して出力するプログラムを作りましょう。
-ファイル名：python2-1.pyとして保存し実行しましょう。
 \begin{legbox}{puthon2-1.py}
 \begin{listing}{1}
 x = 60
@@ -827,7 +551,6 @@ if分だけで完結するのではなくその後のプログラムに値を引
 凡例「if-2」を評価メッセージA判定なら「"excellent"」、B判定なら「"good"」、C判定なら「"passing"」、D判定なら「"failing"」と変数mesに代入し出力する
 プログラムを作成しましょう。
 
-ファイル名：python2-2.pyとして保存し実行しましょう。
 \begin{legbox}{puthon2-2.py}
 \begin{listing}{1}
 x = 60
@@ -853,7 +576,7 @@ yの値が大きければ"y is large."と表示、等しければ"x and y are eq
 表示するプログラムを作りましょう。
 
 ここでxとyはプログラム中でそれぞれ値を入れてif文が正しく動作することを確認しましょう。
-ファイル名「plactice3.py」として保存しましょう。
+
 \end{plabox}
 \newpage
 \subsection{if文（複合条件）}
@@ -873,21 +596,10 @@ yの値が大きければ"y is large."と表示、等しければ"x and y are eq
 
 \end{grabox}
 
- {\gt 対話実行}で「and or not」条件の評価を確認しましょう。
+ {\gt コードセル}で「and or not」条件の評価を確認しましょう。
 
 \begin{grabox}{and or notの式の評価}
-\begin{listing}{1}
->>> x = 999
->>> x > 100
-True
->>> not x > 100
-False
->>> x >= 0 and x <= 100
-False
->>> x < 0 or x > 100
-True
-
-\end{listing}
+\includegraphics[width=10cm]{images/colab17.png}
 \end{grabox}
 ※式の評価について確認ができたと思います。
 
@@ -898,37 +610,21 @@ True
 \begin{plabox}{Plactice}
 「凡例if-2」を101点以上、0点未満の場合「error」と表示されるプログラムに変更してください。
 
-ファイル名「plactice4.py」として保存しましょう。
+
 \end{plabox}
 
 \section{キーボードからの入力}
 プログラムを実行時に変数に値をキーボードから入力した値に実行後設定してみましょう。このような値の代入を動的な値の代入といいます。
 
- {\gt 対話実行}してキーボードからの入力をしてみましょう。
 \begin{grabox}{キーボードからの入力}
-\begin{listing}{1}
->>> input()
-abc #　キーボードから入力
-‘abc’
->>>
->>> input( "type = ” )
-type = xyz
-‘xyz’
->>>
-\end{listing}
+\includegraphics[width=8.5cm]{images/colab18.png}
 \end{grabox}
 
 ※　入力した文字が評価されて表示されました。
 
 入力した文字を変数sにいれてみましょう。
 \begin{grabox}{キーボードから変数への代入}
-\begin{listingcont}
->>> s = input( "type = " )
-type = xyz
->>> s
-‘xyz’
->>>
-\end{listingcont}
+\includegraphics[width=9cm]{images/colab19.png}
 \end{grabox}
 ※変数sに文字が入力されていることを確認できました。
 
@@ -937,19 +633,7 @@ type = xyz
 文字列は「"」(ダブルクォーテーション)や「'」（シングルクォーテーション）で囲まれ数値とは異なる扱いになります。
 ここでは文字列と数値の違いを確認してみましょう。
 \begin{grabox}{文字列の取り扱い}
-\begin{listingcont}
->>> s * 2
-‘xyzxyz’
-※　同じ文字列が2倍になりました
->>> s + 10
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: can only concatenate str (not "int") to str
-※　文字列と数値では計算できませんのでエラーになります。
->>> s + "10”
-xyz10
-※　文字列と文字列はプラスで連結されることがわかります。
-\end{listingcont}
+\includegraphics[width=12cm]{images/colab20.png}
 \end{grabox}
 
 それでは入力した数値を使って計算する方法を学んでみましょう。
@@ -957,28 +641,18 @@ xyz10
 キーボードから入力された数字は数値ではなく文字として認識されていることを確認しましょう。
 
 \begin{grabox}{文字列の取り扱い（数字１）}
-\begin{listingcont}
->>> s = input ( "number = " )
-10
->>> s
-‘10’
->>> s * 2
-‘1010’
+\includegraphics[width=10cm]{images/colab21.png}
+
 ※　このままだと変数sは文字列の’10’が入っています。
-\end{listingcont}
+
 \end{grabox}
 \subsubsection{文字列から数値への変換}
 文字として入力された数字（文字列）を数値に変換するためにはint命令を利用します。
 \begin{grabox}{文字列の取り扱い（数値への変換）}
-\begin{listingcont}
->>> int(s)
-10
-※　シングルクォーテーションがなくなりました。
->>> n = int(s)
->>> n * 2
-20
+\includegraphics[width=7cm]{images/colab22.png}
+
 ※　数値として評価されています。
-\end{listingcont}
+
 \end{grabox}
 \begin{hipoint}{Point}
 数値として判定できない文字の扱いはエラー処理（例外処理）として別に考える必要があります。
@@ -986,19 +660,15 @@ xyz10
 \subsubsection{数値から文字列への変換}
 数値を文字列にするにはstr命令を利用します。
 \begin{grabox}{数値から文字列のへの変換}
-\begin{listingcont}
->>> str( n * 2 )
-‘20’
->>> str( n * 2 ) + " is twenty”
-‘20 is twenty’
-\end{listingcont}
+\includegraphics[width=7cm]{images/colab23.png}
+
+str関数によって文字列として取り扱われるようになりました。
 \end{grabox}
 文字列にすると「+」演算子で連結（文字列を結合すること）もできます。
 
 \begin{pabox}{input-1}
 学生Aさんの数学の得点をxに、英語の得点をyに入力し数値化して平均点を出力しましょう。（数値化後の変数をそれぞれmとeを使います）
 
-ファイル名：python4-1.pyとして保存し実行しましょう。
 
 ※　入力が数値として判定できない場合の処理は行いません。
 \begin{legbox}{python4-1.py}
@@ -1026,7 +696,6 @@ The average is 65.0
 
 「凡例input-1」を社会の得点をzに入力「”{\tt social = }"」し、変数sに数値化して学生Aさんの1科目当たりの平均点を出力しましょう。
 
-python4-1.pyをファイル名「plactice5.py」として別名で保存しましょう。
 
 \end{plabox}
 
@@ -1051,7 +720,6 @@ python4-1.pyをファイル名「plactice5.py」として別名で保存しま�
 
 for文を使って３回”wan” ”nyan”と表示します。
 
-ファイル名をpython5-1.pyとして保存しましょう。
 \begin{legbox}{python5-1.py}
 \begin{listing}{1}
 for x in range(3):
@@ -1078,7 +746,7 @@ for文はブロック内に書かれている処理をrangeの中に書かれて
 \begin{plabox}{Plactice}
 同じく1000回”wan” "nyan"と表示させましょう。
 
-python5-1.pyをファイル名「plactice6.py」として別名で保存しましょう。
+
 
 \end{plabox}
 
@@ -1097,7 +765,7 @@ for文の次に書いているのは変数xです。
 
 変数xの値を表示してみましょう。
 
-ファイル名：python5-2.py
+
 
 \begin{legbox}{python5-2.py}
 \begin{listing}{1}
@@ -1131,27 +799,11 @@ for x in range(3):
 \item {\tt range(1, 10, 2)}
 \item {\tt range(2, 10, 3)}
 \end{description}
- {\gt 対話実行}してみましょう。
+ {\gt コードセルで実行}してみましょう。
 
-\begin{legbox}{対話実行}
-\begin{listing}{1}
->>> for x in range(1, 5):
-...     print( x )
-...
-1
-2
-3
-4
-	・
-	（中略）
-	・
->>> for x in range(2, 10, 3):
-...     print( x )
-...
-2
-5
-8
-\end{listing}
+\begin{legbox}{コードセルによる実行}
+\includegraphics[width=7cm]{images/colab24.png}
+
 \end{legbox}
 \end{pabox}
 このようにrange()で作られる値は最初の値が初期値、２つ目の値が上限値（未満となるよう）、３つ目の値を加算していくため、次のようになることがわかります。
@@ -1168,7 +820,7 @@ for x in range(3):
 
 1から10までの数値を足した合計を求めるプログラムを作りましょう。
 
-ファイル名をpython5-3.pyとして保存してください。
+
 \begin{legbox}{python5-3.py}
 \begin{listing}{1}
 sum = 0
@@ -1194,7 +846,7 @@ print ( sum )
 
 ※　（1 / 2 ** 53 )あたりまでで精度が足りなくなるみたいです。
 
-python5-3.pyをファイル名「plactice7.py」として別名で保存しましょう。
+
 
 
 \end{plabox}
@@ -1253,7 +905,7 @@ print ( y / 10 )
 \begin{pabox}{for-5}
 繰り返しを用いてシンプルに記述します。
 
-ファイル名：python5-4.py
+
 \begin{codebox}{python5-4.py}
 \begin{listing}{1}
 y = 0
@@ -1275,7 +927,7 @@ print( y / 10 )
 \begin{plabox}{Plactice}
 「凡例for-5」のプログラムの科目毎の点数入力の際「subject1~5 =」のように何番目の科目を入力しているのか分かりやすく表示してください。
 
-python5-4.pyをファイル名「plactice8.py」として別名で保存しましょう。
+
 
 \end{plabox}
 \subsection{繰り返し処理のその他の制御}
@@ -1293,7 +945,7 @@ while 条件式:
 \begin{pabox}{loop-1}
 whileを使って１～５までの合計を求め出力するプログラムを作ります。
 
-ファイル名：python5-5.py
+
 \begin{codebox}{python5-5.py}
 \begin{listing}{1}
 i = 1
@@ -1323,7 +975,7 @@ break制御を使うことで繰り返し処理を終了できますので、whi
 whileを使って１～５までの合計を求め出力するプログラムを作ります。
 ここでwhile文は式の評価結果を常に真とするようにしています。
 
-ファイル名：python5-6.py
+
 \begin{codebox}{python5-6.py}
 \begin{listing}{1}
 i = 1
@@ -1410,7 +1062,7 @@ for文と配列を使って効率よく出力処理してみましょう。
 
 配列listを使って5科目を一覧表示してください。
 
-ファイル名：python6-1.py
+
 \begin{legbox}{python6-1.py}
 \begin{listing}{1}
 subjects = ["Mathematics","English","Social","Japanese",
@@ -1542,7 +1194,6 @@ for n in range(0,5):
 
 エラーと表示された科目については「error」と出力します。
 
-python6-3.pyをファイル名「plactice9.py」として別名で保存しましょう。
 
 \begin{codebox}{実行例}
 \begin{verbatim}
@@ -1649,7 +1300,7 @@ students_scores[0].append(70)
 2次元配列の例で利用した{\tt students\_scores = [[60, 80], [70, 90], [80, 100]]}(数学と英語の点数)
 を使って科目の合計点を求めるプログラムを作成しましょう。
 
-ファイル名をpython6-4.pyとして保存してください。
+
 \begin{legbox}{python6-4.py}
 \begin{listing}{1}
 students_scores = [[60, 80], [70, 90], [80, 100]]
@@ -1678,7 +1329,7 @@ print ("英語の合計点数", e)
 \begin{pabox}{list-5}
 添え字を使って前の凡例と同「list-4」じ機能を作ってみましょう。
 
-ファイル名をpython6-5.pyとして保存してください。
+
 \begin{legbox}{python6-5.py}
 \begin{listing}{1}
 students_scores = [[60, 80], [70, 90], [80, 100]]
@@ -1703,7 +1354,7 @@ print ("英語の合計点数", e)
 \begin{plabox}{Plactice}
 次のプログラムを参考にして2次元配列に表のような点数を5名分追加して数学と英語の平均点を求め出力するプログラムを作成しましょう。
 
-ファイル名「plactice10.py」として保存しましょう。
+
 \begin{center}
 \begin{tabular}{|c|r|r|} 
 \hline
@@ -1737,7 +1388,7 @@ students_scores.append([70, 90]) #Bさんのデータを追加
 「Plactice9」のプログラムを３人分の得点を入力して5科目それぞれの平均値を出力するように変更してください。
 この時「error」な点数の入力はないものとします。
 
-plactice9.pyをファイル名「plactice11.py」として別名で保存しましょう。
+
 
 \begin{codebox}{実行例}
 \begin{verbatim}
@@ -1772,39 +1423,11 @@ Scientific の平均点 60.0
 \subsection{配列（リスト）操作について}
 配列で操作可能な処理として「.append()」を使いましたが、ほかにどのような操作が可能か見てみましょう。
 
- {\gt 対話実行}を使って配列に対する操作をしてみましょう。
+ {\gt コードセル}を使って配列に対する操作をしてみましょう。
 
 \begin{grabox}{配列リストの操作}
-\begin{listing}{1}
->>> l=[4,5,7,2,1,9]
-#並べ替え（昇順）
->>> l.sort()
->>> l
-[1, 2, 4, 5, 7, 9]
-#並べ替え（降順）は（）の中に「reverse = True」を記述する。
->>> l.sort(reverse=True)　
->>> l
-[9, 7, 5, 4, 2, 1]
->>>
-#リストの最後の要素を取り出す
->>> l.pop()
-1
->>> l
-[9, 7, 5, 4, 2]
-#リストの最初の要素を取り出す。
->>> l.pop(0)
-9
->>> l
-[7, 6, 5, 2]
-#指定の値を削除する
->>> l.remove(4)
->>> l
-[7, 5, 2]
-#リストを空にする
->>> l.clear()
->>> l
-[]
-\end{listing}
+
+\includegraphics[width=10cm]{images/colab25.png}
 \end{grabox}
 他にもリストの操作をする命令はありますが、主なものだけ紹介させていただきました。
 
@@ -1971,7 +1594,7 @@ def 関数名(引数1,引数2):
 
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
-ファイル名をpython8-1.pyとして保存してください。
+
 \begin{codebox}{python8-1.py}
 \begin{listing}{1}
 def func(x):
@@ -1992,14 +1615,10 @@ print( y )
 
 それぞれ「11」と「27」が関数の結果として表示されることを確認できます。
 \end{pabox}
- {\gt 対話実行}で定義の無い関数を呼び出すと次のエラーが出力されます。
+ {\gt コードセル}で定義の無い関数を呼び出すと次のエラーが出力されます。
 プログラムとして保存して実行しても同様のエラーとなります。
-\begin{verbatim}
->>> y = func(x)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'func' is not defined
-\end{verbatim}
+
+\includegraphics[width=13cm]{images/colab26.png}
 
 \subsubsection{関数の呼び出し階層}
 関数は呼び出しの階層が１つだけではなく何階層も深く呼び出すことができます。つまり関数から関数を呼び出すように書くことができます。
@@ -2011,7 +1630,7 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 作ったプログラムで上記2次方程式の0から4まで整数代入した合計を求めます。
 
-ファイル名をpython8-2.pyとして保存してください。
+
 
 \begin{codebox}{python8-2.py}
 \begin{listing}{1}
@@ -2045,7 +1664,7 @@ print( a )
 この時の点数は 50，80, 85, 70, 40で平均65とします。
 
 
-ファイル名「plactice12.py」として保存しましょう。
+
 \begin{description}
 	\item $分散 = \cfrac{1}{人数}\sum {(得点-65(平均点))^2}$
 \end{description}
@@ -2063,7 +1682,7 @@ print( a )
 \end{listing}
 結果を確認してみてください。
 \end{plabox}
-
+\newpage
 \subsection{変数のスコープ（有効範囲）について}
 今まで変数として利用してきた変数は値が代入されてから有効になっていましたが、値が代入され利用される範囲（スコープ・有効範囲）にはルールがあります。
 
@@ -2071,25 +1690,10 @@ print( a )
 制約なく利用できるグローバル変数は一見便利ですが、いつどこで誰が値を変更するかわかりませんので必要以上に多用することはお勧めしません。
 
 また関数内で利用されている変数は関数内でしか利用することができない変数で値の利用される範囲が関数内に限定されたローカル変数と言われます。
- {\gt 対話実行}で確認してみましょう。
+ {\gt コードセル}で確認してみましょう。
 \begin{grabox}{変数のスコープ}
-\begin{listing}{1}
->>> #関数の定義
->>> def func(x):
-...     answer = x ** 2 + 2 * x + 3
-...     return answer
-... 
->>> answer
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'answer' is not defined
-# answerが定義されていない（スコープ外）というエラーが表示されます。
->>> x
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'x' is not defined
-# xも同様にスコープ外であることがわかります。
-\end{listing}
+\includegraphics[width=13cm]{images/colab27.png}
+
 \end{grabox}
 \newpage
 \subsubsection{グローバル変数}
@@ -2099,7 +1703,7 @@ NameError: name 'x' is not defined
 \begin{pabox}{scope-1}
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
-ファイル名python8-3.pyで保存してください。
+
 \begin{codebox}{python8-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
@@ -2111,7 +1715,6 @@ x = 2
 #ここでxに代入するとグローバル変数として扱われます。
 y = func()
 print( y )
-
 x = 4
 y = func()
 print( y )
@@ -2133,7 +1736,7 @@ print( y )
 \begin{pabox}{scope-2}
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
-ファイル名python8-4.pyで保存してください。
+
 \begin{codebox}{python8-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
@@ -2183,7 +1786,7 @@ print( y )
 テストでは80点以上を「excelent」とし、60点以上を「good」とし、40点以上を「passing」、40点未満を「failing」と評価する関数を記載します。100点を超えていたり0点未満の場合「error」という戻り値となり、点数を引数とする関数evaluationを作成しましょう。
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
-ファイル名python8-5.pyとして保存してください。
+
 \begin{codebox}{python8-5.py}
 \begin{listing}{1}
 def evaluation(score):
@@ -2220,7 +1823,7 @@ for n in range(5):
 
 ただし、名前にエラー入力は無いものとします。
 
-ファイル名「plactice13.py」として保存しましょう。
+
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
        &scores&0列目&1列目&2列目&3列目&4列目&5列目&6列目 \\ \hline \hline
@@ -2308,7 +1911,7 @@ pythonでは時間や乱数機能の追加を行うことができます。
 \begin{pabox}{module-1}
 for文で10回繰り返しを行い、ライブラリを使って現在時刻、カウンターiの平方根$\sqrt{　i　}$や3乗根$\sqrt[3]{　i　}$を表示して、乱数で生成された1～3の数値の秒数を待ち時間とするプログラムを作成しましょう。
 
-ファイル名python9-1.pyとして保存してください。
+
 \begin{codebox}{python9-1.py}
 \begin{listing}{1}
 #ライブラリを利用する場合import文で読み込みを行う
@@ -2365,23 +1968,25 @@ pip install Pillow
 
 最初に描画用の領域（サイズが500px,300px）を作成して表示してみましょう。
 
-ファイル名python9-2.pyとして保存してください。
+
 \begin{codebox}{python9-2.py}
 \begin{listing}{1}
 #Pillowライブラリを利用する場合は名称PILを使う宣言が必要で、
 #import文で描画に必要なライブラリを指定する。
+from IPython.display import display #Colaboratoryで表示するにはdisplayを利用します。
 from PIL import Image
 
 im = Image.new('RGB', (500, 300)) #イメージを作成する。'RGB'は赤・緑・青の色指定を意味する
 
-im.show() #イメージを表示する
+#im.show() #PC上でイメージを表示する
+display(im)
 \end{listing}
 \end{codebox}
 
 描画用のエリアに「$(50,50)-(150,50)$」と「$(50,100)-(150,150)$」の座標で白い線を引いてみましょう。
 
 
-ファイル名python9-3.pyとして保存してください。
+
 \begin{codebox}{python9-3.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw #ImageDrawのインポートを追加する
@@ -2398,7 +2003,7 @@ im.show()
 
 それでは赤い線に変更してみましょう。
 
-ファイル名python9-4.pyとして保存してください。
+
 \begin{codebox}{python9-4.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
@@ -2504,7 +2109,7 @@ polygon( 座標 , fill= , outline= )
 \begin{pabox}{pillow-2}
 図形を描画する凡例
 
-ファイル名python9-5.pyとして保存してください。
+
 \begin{codebox}{python9-5.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
@@ -2534,7 +2139,7 @@ im.show()
 繰り返しを利用して図形を描画する凡例です。
 色や位置を変化させながら図形描画します。
 
-ファイル名python9-6.pyとして保存してください。
+
 \begin{codebox}{python9-6.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
@@ -2561,7 +2166,7 @@ im.show()
 プログラムで画像ファイルを指定して読み込むには画像ファイルがある場所を指し示すためにパスを指定します。
 現在プログラムの存在する場所からの相対で指定しますので、今回は「imagesample」フォルダー（ディレクトリ）内にある「sample01.jpg」を使ってみましょう。
 
-ファイル名python9-7.pyとして保存してください。
+
 \begin{codebox}{python9-7.py}
 \begin{listing}{1}
 from PIL import Image
@@ -2576,7 +2181,7 @@ img.show()  # 画像表示
 
 さらに画像を30°回転させてみましょう。
 
-ファイル名python9-8.pyとして保存してください。
+
 \begin{codebox}{python9-8.py}
 \begin{listing}{1}
 from PIL import Image
