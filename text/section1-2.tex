@@ -72,11 +72,11 @@ titlerule style={black}  }
 
 \begin{document}
 \begin{center}
-  \huge 2021年7月　\par
+  \huge 2021年9月　\par
   \vspace{15mm}
   \huge プログラミング（Python） \par
   \vspace{15mm}
-  \LARGE  プログラミング初心者から活用まで　Ver1.3\par
+  \LARGE  プログラミング初心者から活用まで　Ver1.3c\par
   \vspace{100mm}
 \end{center}
  
@@ -140,7 +140,7 @@ python特徴の説明
 
 Webで起動すると次の画面が表示されます。
 
-\includegraphics[width=12cm]{images/colab02.png}
+\includegraphics[width=13cm]{images/colab02.png}
 
 準備はこれにて完了です。
 
@@ -150,7 +150,7 @@ Webで起動すると次の画面が表示されます。
 
 ここで「コードセル」領域にプログラムを入力することができます。
 
-\includegraphics[width=8cm]{images/colab04.png}
+\includegraphics[width=10cm]{images/colab04.png}
 
 実行ボタンを押して動作確認しましょう。
 少し待ち時間がかかりますが、無事結果が表示されます。
@@ -354,7 +354,7 @@ a ～ z のアルファベット（大文字も可）　\\ \hline
 \subsection{画面に出力する方法}
 結果を出力するprint文を使ってみます。
 \begin{grabox}{出力命令}
-\includegraphics[width=7cm]{images/colab10.png}
+\includegraphics[width=8cm]{images/colab10.png}
 \end{grabox}
 「print(x)」も「x」もxの値が出力されます。違いについては次のセクション「コードセルでの出力」の中で説明します。
 
@@ -365,7 +365,7 @@ a ～ z のアルファベット（大文字も可）　\\ \hline
 \subsubsection{コードセルで複数の出力の作成}
 
 \begin{grabox}{プログラム名（python1-1.py）}
-\includegraphics[width=7.5cm]{images/colab11.png}
+\includegraphics[width=8cm]{images/colab11.png}
 \end{grabox}
 実行すると「print( x )」の値だけが出力されることが分かります。
 
@@ -423,7 +423,7 @@ print (x)
 
 それでは条件式を使った式の評価を見ていきましょう。
 \begin{grabox}{式の評価（条件式１）}
-\includegraphics[width=7.5cm]{images/colab13.png}
+\includegraphics[width=9cm]{images/colab13.png}
 \end{grabox}
 
 ほかの言語では書けないかもしれませんが次のような式の条件式も可能です。
@@ -475,7 +475,7 @@ else:
 変数xに学生Aさんの数学の得点を入力します（今回は60点とします）。このテストでは50点以上を合格としますので、Aさんの数学の得点が合格なのか不合格なのか判定して出力するプログラムを作りましょう。
 
 \begin{legbox}{if-ex.py}
-\includegraphics[width=12cm]{images/colab16.png}
+\includegraphics[width=13cm]{images/colab16.png}
 \end{legbox}
 
 
@@ -633,7 +633,7 @@ yの値が大きければ"y is large."と表示、等しければ"x and y are eq
 文字列は「"」(ダブルクォーテーション)や「'」（シングルクォーテーション）で囲まれ数値とは異なる扱いになります。
 ここでは文字列と数値の違いを確認してみましょう。
 \begin{grabox}{文字列の取り扱い}
-\includegraphics[width=12cm]{images/colab20.png}
+\includegraphics[width=13cm]{images/colab20.png}
 \end{grabox}
 
 それでは入力した数値を使って計算する方法を学んでみましょう。
@@ -802,7 +802,7 @@ for x in range(3):
  {\gt コードセルで実行}してみましょう。
 
 \begin{legbox}{コードセルによる実行}
-\includegraphics[width=7cm]{images/colab24.png}
+\includegraphics[width=9cm]{images/colab24.png}
 
 \end{legbox}
 \end{pabox}
@@ -1427,7 +1427,7 @@ Scientific の平均点 60.0
 
 \begin{grabox}{配列リストの操作}
 
-\includegraphics[width=10cm]{images/colab25.png}
+\includegraphics[width=11cm]{images/colab25.png}
 \end{grabox}
 他にもリストの操作をする命令はありますが、主なものだけ紹介させていただきました。
 
@@ -1618,12 +1618,11 @@ print( y )
  {\gt コードセル}で定義の無い関数を呼び出すと次のエラーが出力されます。
 プログラムとして保存して実行しても同様のエラーとなります。
 
-\includegraphics[width=13cm]{images/colab26.png}
+\includegraphics[width=14cm]{images/colab26.png}
 
 \subsubsection{関数の呼び出し階層}
 関数は呼び出しの階層が１つだけではなく何階層も深く呼び出すことができます。つまり関数から関数を呼び出すように書くことができます。
 
-\newpage
 \begin{pabox}{func-2}
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0からn - 1と変化させたときのyの値の合計を求める関数func2
 のプログラムを作ります。
@@ -1692,7 +1691,7 @@ print( a )
 また関数内で利用されている変数は関数内でしか利用することができない変数で値の利用される範囲が関数内に限定されたローカル変数と言われます。
  {\gt コードセル}で確認してみましょう。
 \begin{grabox}{変数のスコープ}
-\includegraphics[width=13cm]{images/colab27.png}
+\includegraphics[width=14cm]{images/colab27.png}
 
 \end{grabox}
 \newpage
