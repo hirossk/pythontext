@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {第1章}プログラミング言語python導入}{4}%
 \contentsline {section}{\numberline {1.1}プログラムとは？}{4}%
-\contentsline {subsection}{\numberline {1.1.1}pythonインストール}{4}%
+\contentsline {subsection}{\numberline {1.1.1}python環境の準備}{4}%
 \contentsline {chapter}{\numberline {第2章}プログラミング 基礎}{7}%
 \contentsline {section}{\numberline {2.1}コンピューターを使った命令の実行}{7}%
 \contentsline {subsection}{\numberline {2.1.1}命令や計算の実行方法}{7}%
