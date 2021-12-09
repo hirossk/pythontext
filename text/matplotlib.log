@@ -1,11 +1,11 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.20)  28 JUL 2021 20:26
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.12.14)  13 NOV 2021 07:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **matplotlib.tex
 (./matplotlib.tex
-pLaTeX2e <2020-10-01>+2 (based on LaTeX2e <2020-10-01> patch level 4)
-L3 programming layer <2021-02-18>
+pLaTeX2e <2020-02-02>+3 (based on LaTeX2e <2020-02-02> patch level 5)
+L3 programming layer <2020-03-06>
 ! Undefined control sequence.
 l.1 \chapter
             {統計グラフ入門}
@@ -17,11 +17,11 @@ End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 16 strings out of 479466
- 319 string characters out of 5873881
- 289224 words of memory out of 5000000
- 17812 multiletter control sequences out of 15000+600000
- 407301 words of font info for 44 fonts, out of 8000000 for 9000
+ 16 strings out of 481140
+ 319 string characters out of 5920653
+ 239379 words of memory out of 5000000
+ 16157 multiletter control sequences out of 15000+600000
+ 536209 words of font info for 41 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 20i,0n,25p,73b,13s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 13i,0n,15p,70b,10s stack positions out of 5000i,500n,10000p,200000b,80000s
 No pages of output.
