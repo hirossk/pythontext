@@ -72,7 +72,7 @@ titlerule style={black}  }
 
 \begin{document}
 \begin{center}
-  \huge 2021年7月　\par
+  \huge 2021年12月　\par
   \vspace{15mm}
   \huge プログラミング（Python） \par
   \vspace{15mm}
@@ -124,16 +124,25 @@ titlerule style={black}  }
  \item etc.etc.
 \end{itemize}
 
-python特徴の説明
+Python特徴の説明
 \begin{itemize}
  \item シンプル
  \item わかりやすい
  \item 誰が書いても同じようになりやすい
- \item 流行っている！
+\end{itemize}
+Pythonを学習するメリットは将来性
+\begin{itemize}
+ \item AI・機械学習の開発
+ \item マルチプラットフォーム
+ \item YouTubeやInstagramで利用されている
+ \item 高収入な仕事にありつける
 \end{itemize}
 
-\subsection{pythonインストール}
-今回利用するpython言語の環境設定は次の通りとなります。
+Pythonが動作するシステムはmacOS,Windows,UNIX,Linux,スマートフォンなどクロス（マルチ）プラットフォームで
+Googleも力を入れていてこれからのテクノロジーに必要とされる機能の多くを有しています。
+
+\subsection{Pythonインストール}
+今回利用するPython言語の環境設定は次の通りとなります。
 
 今回の教室内の設定およびインストールは済ませていますが、ご自宅でインストールする場合は次の手順が参考になります。
 
@@ -150,7 +159,6 @@ python特徴の説明
 	\item ・Download Windows installer（64-bit）
 
 \end{itemize}
-
 
 
 いずれかを選択しダウンロードします。
@@ -205,17 +213,62 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
 
 インストール後に
 再読み込みしてアクティブにするを選択してpython拡張を有効にします。
-
+Point
 
 これでインストールは完了です。
 
 
 
+\begin{hipoint}{Point}
+コマンドプロンプトの利用
+
+
+プログラミングを行っていくとコマンドを使うことが増えます。
+Windows上でコマンドを利用するためには「コマンドプロンプト」または「パワーシェル」を使うことが一般的です。
+
+今回使うVisual Studio Codeでは「ターミナル」と呼ばれる機能になります。
+
+\includegraphics[width=8cm]{images/commandprompt.png}
+
+「コマンドプロンプト」や「ターミナル」ではCUIというキーボードを使った命令の解釈実行が行われます。
+
+コマンドは種類が沢山あるので一つ一つ操作して慣れていきましょう。
+\end{hipoint}
 
 \chapter{プログラミング 基礎}
 \setcounter{section}{0}
 
 \section{コンピューターを使った命令の実行}
+\subsection{命令や計算の実行の仕組み}
+コンピューターの仕組みを知るために５大装置というものを最初に学びます。
+５大装置は演算装置・制御装置・記憶装置・入力装置・出力装置の５つです。
+
+
+CPUには「演算装置」と「制御装置」が含まれていることが多いため図では４つの装置に見えると思います。
+
+
+\includegraphics[width=9cm]{images/FiveUnitsOfaComputer.png}
+
+コンピューターは条件分岐やループ（繰り返し）が無い限りはメモリーの上から順番に命令をCPUに取り込み実行していきます。
+また、メモリー上にデータを格納することでデータを退避して多くのデータ処理を高速に行うことで
+人では取り扱うことが難しい大量のデータを一度に処理していくことができます。
+
+このメモリーに保存されている命令をプログラム、退避するデータを変数と呼びます。
+
+\begin{pabox}{プログラムの実行とメモリー}
+
+\begin{verbatim}
+x = 10       #xという名前でメモリー上に保存領域を確保
+             #xというメモリー上領域に10を保存せよという命令
+y = 20       #yという名前でメモリー上に保存領域を確保
+             #yというメモリー上領域に20を保存せよという命令
+z = x + y    #zという名前でメモリー上に保存領域を確保
+             #zというメモリー上領域にx+yの結果を保存せよという命令
+print( z )   #zの内容を出力せよという命令
+\end{verbatim}
+\includegraphics[width=8cm]{images/memoryimage.png}
+\end{pabox}
+
 \subsection{命令や計算の実行方法}
  一つ一つ結果を確認して実行する方法と手順をたくさんまとめて実行する方法があります。
 
@@ -225,6 +278,7 @@ User Installerでそれぞれ32bit,64bitのいずれかを選択します。
  プログラムファイルを作成して実行する「スクリプトによる実行」を使うことができます。
  
  これらのモードを利用することでコンピューターへ命令するというプログラミングの基礎を効率よく学ぶことができます。
+
 
 \begin{pabox}{pythonの実行方法}
 対話実行の場合は入力待ちとなり「$>>>$」の後ろに直接命令や計算式を入力することができます。
@@ -299,7 +353,6 @@ pythonでは一連の処理をブロックという形で表現することに�
 
 \includegraphics[width=7cm]{images/ifflow.jpg}
 
-\newpage
 前述の流れ図をpythonで記述した場合、次のようになります。 
 \begin{pabox}{pythonのブロック}
 ブロック開始「:」とインデントの組み合わせです。if文でxの値が10であれば10と表示し、
@@ -502,7 +555,7 @@ vscodeの「ファイル」メニュー「新規ファイル」を選択しま�
 
 エディターで次のプログラムを入力します。行番号は自動で付番されます（プログラムの実行に影響はありません）ので、参考にしてください。
 
-\begin{grabox}{保存プログラム（python1-1.py）}
+\begin{grabox}{保存プログラム（python{\thesection}-1.py）}
 \begin{listing}{1}
 x = 1
 x = x + 2
@@ -1769,6 +1822,10 @@ Scientific の平均点 60.0
 \end{codebox}
 \end{plabox}
 \newpage
+\section{配列とアルゴリズム}
+\subsection{配列とデータ処理}
+
+\newpage
 \subsection{配列（リスト）操作について}
 配列で操作可能な処理として「.append()」を使いましたが、ほかにどのような操作が可能か見てみましょう。
 
@@ -1826,7 +1883,7 @@ Scientific の平均点 60.0
 \end{grabox}
 辞書データdictdataに日本の空港のレターコードをキーとして空港名を設定する
 \begin{pabox}{dict-1}
-\begin{codebox}{python7-1.py}
+\begin{codebox}{python8-1.py}
 \begin{listing}{1}
 dictdata = {'CTS':'SHINCHITOSE', 'HKD':'HAKODATE', 
     'HND':'TOKYOKOKUSAI', 'NRT':'NARITAKOKUSAI' }
@@ -1874,7 +1931,7 @@ JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を�
 また「キー値」と格納する「値」を「：」コロンで区切ります。
 
 このまま連想配列やリストと同様の記述となりますので、pythonのdictオブジェクトとして利用することができます。
-\begin{codebox}{python7-2.py}
+\begin{codebox}{python8-2.py}
 \begin{verbatim}
 AKJ⇒旭川空港
 MMB⇒女満別空港
@@ -1903,7 +1960,7 @@ HND⇒東京国際空港
 
 \begin{pabox}{json-2}
 2年3組　佐々木君の国社数理英のJSON表記は次のようになります。
-\begin{codebox}{python7-3.py}
+\begin{codebox}{python8-3.py}
 \begin{listing}{1}
 json_data = {
   "class":"2年3組" ,
@@ -1971,8 +2028,8 @@ def 関数名(引数1,引数2):
 
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
-ファイル名をpython8-1.pyとして保存してください。
-\begin{codebox}{python8-1.py}
+ファイル名をpython9-1.pyとして保存してください。
+\begin{codebox}{python9-1.py}
 \begin{listing}{1}
 def func(x):
     answer = x ** 2 + 2 * x + 3
@@ -2011,9 +2068,9 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 作ったプログラムで上記2次方程式の0から4まで整数代入した合計を求めます。
 
-ファイル名をpython8-2.pyとして保存してください。
+ファイル名をpython9-2.pyとして保存してください。
 
-\begin{codebox}{python8-2.py}
+\begin{codebox}{python9-2.py}
 \begin{listing}{1}
 def func1(x):
     answer = x ** 2 + 2 * x + 3
@@ -2099,8 +2156,8 @@ NameError: name 'x' is not defined
 \begin{pabox}{scope-1}
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
-ファイル名python8-3.pyで保存してください。
-\begin{codebox}{python8-3.py}
+ファイル名python9-3.pyで保存してください。
+\begin{codebox}{python9-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
 def func():
@@ -2133,8 +2190,8 @@ print( y )
 \begin{pabox}{scope-2}
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
-ファイル名python8-4.pyで保存してください。
-\begin{codebox}{python8-4.py}
+ファイル名python9-4.pyで保存してください。
+\begin{codebox}{python9-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
 def func(x):
@@ -2183,8 +2240,8 @@ print( y )
 テストでは80点以上を「excelent」とし、60点以上を「good」とし、40点以上を「passing」、40点未満を「failing」と評価する関数を記載します。100点を超えていたり0点未満の場合「error」という戻り値となり、点数を引数とする関数evaluationを作成しましょう。
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
-ファイル名python8-5.pyとして保存してください。
-\begin{codebox}{python8-5.py}
+ファイル名python9-5.pyとして保存してください。
+\begin{codebox}{python9-5.py}
 \begin{listing}{1}
 def evaluation(score):
     if score < 0 or score > 100:
