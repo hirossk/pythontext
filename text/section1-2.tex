@@ -1824,10 +1824,58 @@ Scientific の平均点 60.0
 \newpage
 \section{配列とアルゴリズム}
 \subsection{配列とデータ処理}
+情報を学ぶ上で必須となる配列（リスト）を使った一般的なアルゴリズムを紹介します。
+
+\begin{pabox}{algorism-1}
+ここではリストに格納された値を手順化して昇順に並び替えてみます。
+
+ファイル名をpython{\thesection}-1.pyとして保存してください。
+\begin{legbox}{python{\thesection}-1.py}
+\begin{listing}{1}
+val = [2,5,8,3,1]
+#選択ソート法
+for index1 in range(4):
+    #比較範囲の先頭の要素を最小値とみなし一時保管する。
+    tempval = val[index1]
+    tempmin = tempval
+    repindex = index1
+    for index2 in range(index1 + 1, 5):
+        #比較範囲の次の値から最後まで繰り返す。
+        if tempmin > val[index2] :
+            #比較範囲の中から最小値とみなした値よりも小さい値を
+            #見つけたら一時保管する
+            tempmin = val[index2]
+            repindex = index2
+    #先頭の値と最小値の入れ替え(本当は違ったときだけ入れ替え)
+    #if 違ったときだけの条件 :
+    tempval = val[index1]
+    val[index1] = val[repindex]
+    val[repindex] = tempval
+print(val)
+
+\end{listing}
+\end{legbox}
+
+\newpage
+
+流れ図を作成する前に図解して手順を整理しましょう。
+
+\includegraphics[width=13cm]{images/sortimage.png}
+
+
+図解した手順をもとに流れ図を作成します。
+
+\includegraphics[width=10cm]{images/sortalgorism.png}
+
+
+\end{pabox}
+
 
 \newpage
 \subsection{配列（リスト）操作について}
-配列で操作可能な処理として「.append()」を使いましたが、ほかにどのような操作が可能か見てみましょう。
+2.6でもリスト（配列）の操作可能な処理（手続き）として「.append()」を使いましたが、
+リストは処理可能なアルゴリズムを多数用意していますので
+ほかにどのような操作が可能か見てみましょう。
 
  {\gt 対話実行}を使って配列に対する操作をしてみましょう。
 
@@ -1864,7 +1912,7 @@ Scientific の平均点 60.0
 \end{listing}
 \end{grabox}
 他にもリストの操作をする命令はありますが、主なものだけ紹介させていただきました。
-
+\newpage
 \section{辞書について}
 \subsection{辞書（dictionary）とは？}
 

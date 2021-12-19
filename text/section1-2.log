@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.20)  19 DEC 2021 09:12
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.20)  19 DEC 2021 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,72 +716,77 @@ Underfull \hbox (badness 3364) in paragraph at lines 1702--1704
 ents[]scores = [[60, 80], [70, 90], [80,
  []
 
-[50] [51] [52] [53] [54] [55] [56]
+[50] [51] [52] [53]
+File: images/sortimage.png Graphic file (type bmp)
+<images/sortimage.png>
+File: images/sortalgorism.png Graphic file (type bmp)
+<images/sortalgorism.png>
+ [54] [55] [56] [57] [58]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-926.
+974.
 
 (c:/texlive/2021/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1926.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1974.
 
 
-Overfull \hbox (0.97743pt too wide) in paragraph at lines 1973--1973
+Overfull \hbox (0.97743pt too wide) in paragraph at lines 2021--2021
 [][] \OT1/cmtt/m/n/10 print('json_data["score"][1] \JY1/gt/m/n/10 ⇒ \OT1/cmtt/
 m/n/10 ' + str(json_data['score'][1]))[] 
  []
 
-[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
+[59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line
- 2356.
+ 2404.
 
-[70] [71] [72]
+[72] [73] [74]
 File: images/drawimage1.png Graphic file (type bmp)
 <images/drawimage1.png>
- [73]
+ [75]
 File: images/drawimage2.png Graphic file (type bmp)
 <images/drawimage2.png>
- [74] [75] [76] [77]
-Overfull \hbox (7.48042pt too wide) in paragraph at lines 2582--2582
+ [76] [77] [78] [79]
+Overfull \hbox (7.48042pt too wide) in paragraph at lines 2630--2630
 [][] \OT1/cmtt/m/n/10 draw.chord((190,240,310,350),start=-10,end=190,fill=(210,
 80,82))[] 
  []
 
-[78]
-Overfull \hbox (2.23047pt too wide) in paragraph at lines 2661--2661
+[80]
+Overfull \hbox (2.23047pt too wide) in paragraph at lines 2709--2709
 [][] \OT1/cmtt/m/n/10 img3 = Image.open("imagesample/sample02.jpg").resize((180
 ,150))[] 
  []
 
-[79] [80] [81]
+[81] [82] [83]
 \openout2 = `matplotlib.aux'.
 
  (./matplotlib.tex
 第3章
-[82
+[84
 
 
 ]
 File: images/graph1.png Graphic file (type bmp)
 <images/graph1.png>
- [83]
+ [85]
 File: images/graph2.png Graphic file (type bmp)
 <images/graph2.png>
- [84]
+ [86]
 File: images/graph3.png Graphic file (type bmp)
 <images/graph3.png>
- [85]
+ [87]
 File: images/graph4.png Graphic file (type bmp)
 <images/graph4.png>
- [86]
+ [88]
 Overfull \hbox (17.98033pt too wide) in paragraph at lines 188--188
 [][] \OT1/cmtt/m/n/10 [0.61920954 0.29684569 0.94695251 0.79888711 0.77976444 0
 .10481961[] 
  []
 
-[87] [88] [89]
+[89] [90] [91]
 Underfull \hbox (badness 2418) in paragraph at lines 234--234
 [][]     \OT1/cmtt/m/n/10 saikoro = np.random.randint(1, 6+1, 6 ** times) # \JY
 1/gt/m/n/10 サイコロ
@@ -797,7 +802,7 @@ File: images/graph5.png Graphic file (type bmp)
 <images/graph5.png>
 File: images/graph6.png Graphic file (type bmp)
 <images/graph6.png>
-[90] [91] [92] [93]
+[92] [93] [94] [95]
 File: images/webapi1.png Graphic file (type bmp)
 <images/webapi1.png>
 
@@ -811,63 +816,63 @@ Overfull \hbox (7.48042pt too wide) in paragraph at lines 375--375
 search?[] 
  []
 
-[94] [95] [96]
+[96] [97] [98]
 Overfull \hbox (7.48042pt too wide) in paragraph at lines 499--499
 [][] \OT1/cmtt/m/n/10 url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_
 search?[] 
  []
 
-[97] [98]
+[99] [100]
 Overfull \hbox (7.48042pt too wide) in paragraph at lines 549--549
 [][] \OT1/cmtt/m/n/10 url = 'https://ckan.pf-sapporo.jp/api/3/action/datastore_
 search?[] 
  []
 
-[99] [100]) [101]
+[101] [102]) [103]
 \openout2 = `class.aux'.
 
  (./class.tex
 第4章
-[102
+[104
 
 
 
 
-] [103] [104] [105] [106]
+] [105] [106] [107] [108]
 File: images/ClassExtends.png Graphic file (type bmp)
 <images/ClassExtends.png>
- [107]) [108]
+ [109]) [110]
 第5章
-[109
+[111
 
 
 
-] [110]
-Overfull \hbox (7.6822pt too wide) in paragraph at lines 2803--2803
-[][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
-"Scientific"][] 
- []
-
-[111] [112]
-Overfull \hbox (7.6822pt too wide) in paragraph at lines 2852--2852
+] [112]
+Overfull \hbox (7.6822pt too wide) in paragraph at lines 2851--2851
 [][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
 "Scientific"][] 
  []
 
 [113] [114]
-Overfull \hbox (7.6822pt too wide) in paragraph at lines 2897--2897
+Overfull \hbox (7.6822pt too wide) in paragraph at lines 2900--2900
 [][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
 "Scientific"][] 
  []
 
-[115] [116] (./section1-2.aux (./matplotlib.aux) (./class.aux)) ) 
+[115] [116]
+Overfull \hbox (7.6822pt too wide) in paragraph at lines 2945--2945
+[][] \OT1/cmtt/m/n/10 subjects = ["Mathematics" ,"English","Social","Japanese",
+"Scientific"][] 
+ []
+
+[117] [118] (./section1-2.aux (./matplotlib.aux) (./class.aux)) ) 
 Here is how much of TeX's memory you used:
- 16656 strings out of 479466
- 353436 string characters out of 5873881
+ 16669 strings out of 479466
+ 353705 string characters out of 5873881
  788527 words of memory out of 5000000
- 34035 multiletter control sequences out of 15000+600000
+ 34046 multiletter control sequences out of 15000+600000
  416978 words of font info for 94 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  112i,11n,116p,1023b,1261s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on section1-2.dvi (117 pages, 1051236 bytes).
+Output written on section1-2.dvi (119 pages, 1069148 bytes).
