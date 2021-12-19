@@ -76,7 +76,7 @@ titlerule style={black}  }
   \vspace{15mm}
   \huge プログラミング（Python） \par
   \vspace{15mm}
-  \LARGE  プログラミング初心者から活用まで　Ver1.3\par
+  \LARGE  プログラミング初心者から活用まで　Ver1.3.1\par
   \vspace{100mm}
 \end{center}
  
@@ -546,7 +546,7 @@ SyntaxError: can't assign to literal
 
 \subsubsection{新規ファイルの作成}
 
-ファイル名：python1-1.pyとして保存します。
+ファイル名：python{\thesection}-1.pyとして保存します。
 
 \includegraphics[width=8cm]{images/image5.png}
 
@@ -570,7 +570,7 @@ vscodeの「ファイル」メニュー「名前を付けて保存...」を選�
 
 \includegraphics[width=10cm]{images/image13.png}
 
-ファイル名「python1-1.py」と入力して保存を選択します。
+ファイル名「python{\thesection}-1.py」と入力して保存を選択します。
 
 保存が完了しましたら、{\gt 対話実行}で利用したターミナルに切り替えます。
 
@@ -579,7 +579,7 @@ vscodeの「ファイル」メニュー「名前を付けて保存...」を選�
 \end{hipoint}
 \begin{grabox}{出力なしの実行}
 \begin{listing}{1}
-c:\\～> python python1-1.py
+c:\\～> python2.2-1.py
 c:\\～>
 \end{listing}
 \end{grabox}
@@ -589,8 +589,8 @@ c:\\～>
 
 ※　ファイル作成の手順は新規ファイルの作成を参照してください。
 
-ファイル名：python1-2.py
-\begin{grabox}{保存プログラム（python1-2.py）}
+ファイル名：python{\thesection}-2.py
+\begin{grabox}{保存プログラム（python{\thesection}-2.py）}
 \begin{listing}{1}
 x = 1
 x = x + 2
@@ -601,7 +601,7 @@ print (x)
 実行方法
 \begin{grabox}{出力ありの実行}
 \begin{listing}{1}
-c:\\～> python python1-2.py
+c:\\～> python2.2-2.py
 3
 \end{listing}
 \end{grabox}
@@ -856,8 +856,8 @@ else:
 それではifを使って判定するプログラムを作ってみましょう。
 \begin{pabox}{if-2}
 変数xに学生Aさんの数学の得点を入力します（今回は60点とします）。このテストでは80点以上を「A」とし、60点以上を「B」とし、40点以上を「C」、40点未満を「D」と評価します。Aさんの数学の得点の評価を判定して出力するプログラムを作りましょう。
-ファイル名：python2-1.pyとして保存し実行しましょう。
-\begin{legbox}{puthon2-1.py}
+ファイル名：python{\thesection}-1.pyとして保存し実行しましょう。
+\begin{legbox}{python{\thesection}-1.py}
 \begin{listing}{1}
 x = 60
 if x >= 80:
@@ -880,8 +880,8 @@ if分だけで完結するのではなくその後のプログラムに値を引
 凡例「if-2」を評価メッセージA判定なら「"excellent"」、B判定なら「"good"」、C判定なら「"passing"」、D判定なら「"failing"」と変数mesに代入し出力する
 プログラムを作成しましょう。
 
-ファイル名：python2-2.pyとして保存し実行しましょう。
-\begin{legbox}{puthon2-2.py}
+ファイル名：python{\thesection}-2.pyとして保存し実行しましょう。
+\begin{legbox}{python{\thesection}-2.py}
 \begin{listing}{1}
 x = 60
 if x >= 80:
@@ -1051,10 +1051,10 @@ xyz10
 \begin{pabox}{input-1}
 学生Aさんの数学の得点をxに、英語の得点をyに入力し数値化して平均点を出力しましょう。（数値化後の変数をそれぞれmとeを使います）
 
-ファイル名：python4-1.pyとして保存し実行しましょう。
+ファイル名：python{\thesection}-1.pyとして保存し実行しましょう。
 
 ※　入力が数値として判定できない場合の処理は行いません。
-\begin{legbox}{python4-1.py}
+\begin{legbox}{python{\thesection}-1.py}
 \begin{listing}{1}
 x = input ( "math = " )
 m = int ( x ) 
@@ -1079,7 +1079,7 @@ The average is 65.0
 
 「凡例input-1」を社会の得点をzに入力「”{\tt social = }"」し、変数sに数値化して学生Aさんの1科目当たりの平均点を出力しましょう。
 
-python4-1.pyをファイル名「plactice5.py」として別名で保存しましょう。
+python{\thesection}-1.pyをファイル名「plactice5.py」として別名で保存しましょう。
 
 \end{plabox}
 
@@ -1104,8 +1104,8 @@ python4-1.pyをファイル名「plactice5.py」として別名で保存しま�
 
 for文を使って３回”wan” ”nyan”と表示します。
 
-ファイル名をpython5-1.pyとして保存しましょう。
-\begin{legbox}{python5-1.py}
+ファイル名をpython{\thesection}-1.pyとして保存しましょう。
+\begin{legbox}{python{\thesection}-1.py}
 \begin{listing}{1}
 for x in range(3):
     print( "wan" )
@@ -1131,7 +1131,7 @@ for文はブロック内に書かれている処理をrangeの中に書かれて
 \begin{plabox}{Plactice}
 同じく1000回”wan” "nyan"と表示させましょう。
 
-python5-1.pyをファイル名「plactice6.py」として別名で保存しましょう。
+python{\thesection}-1.pyをファイル名「plactice6.py」として別名で保存しましょう。
 
 \end{plabox}
 
@@ -1150,9 +1150,9 @@ for文の次に書いているのは変数xです。
 
 変数xの値を表示してみましょう。
 
-ファイル名：python5-2.py
+ファイル名：python{\thesection}-2.py
 
-\begin{legbox}{python5-2.py}
+\begin{legbox}{python{\thesection}-2.py}
 \begin{listing}{1}
 for x in range(3):
     print( x )
@@ -1221,8 +1221,8 @@ for x in range(3):
 
 1から10までの数値を足した合計を求めるプログラムを作りましょう。
 
-ファイル名をpython5-3.pyとして保存してください。
-\begin{legbox}{python5-3.py}
+ファイル名をpython{\thesection}-3.pyとして保存してください。
+\begin{legbox}{python{\thesection}-3.py}
 \begin{listing}{1}
 sum = 0
 for x in range(1,11):
@@ -1247,7 +1247,7 @@ print ( sum )
 
 ※　（1 / 2 ** 53 )あたりまでで精度が足りなくなるみたいです。
 
-python5-3.pyをファイル名「plactice7.py」として別名で保存しましょう。
+python{\thesection}-3.pyをファイル名「plactice7.py」として別名で保存しましょう。
 
 
 \end{plabox}
@@ -1306,8 +1306,8 @@ print ( y / 10 )
 \begin{pabox}{for-5}
 繰り返しを用いてシンプルに記述します。
 
-ファイル名：python5-4.py
-\begin{codebox}{python5-4.py}
+ファイル名：python{\thesection}-4.py
+\begin{codebox}{python{\thesection}-4.py}
 \begin{listing}{1}
 y = 0
 for n in range(1, 11):
@@ -1328,7 +1328,7 @@ print( y / 10 )
 \begin{plabox}{Plactice}
 「凡例for-5」のプログラムの科目毎の点数入力の際「subject1~5 =」のように何番目の科目を入力しているのか分かりやすく表示してください。
 
-python5-4.pyをファイル名「plactice8.py」として別名で保存しましょう。
+python{\thesection}-4.pyをファイル名「plactice8.py」として別名で保存しましょう。
 
 \end{plabox}
 \subsection{繰り返し処理のその他の制御}
@@ -1346,8 +1346,8 @@ while 条件式:
 \begin{pabox}{loop-1}
 whileを使って１～５までの合計を求め出力するプログラムを作ります。
 
-ファイル名：python5-5.py
-\begin{codebox}{python5-5.py}
+ファイル名：python{\thesection}-5.py
+\begin{codebox}{python{\thesection}-5.py}
 \begin{listing}{1}
 i = 1
 total = 0
@@ -1376,8 +1376,8 @@ break制御を使うことで繰り返し処理を終了できますので、whi
 whileを使って１～５までの合計を求め出力するプログラムを作ります。
 ここでwhile文は式の評価結果を常に真とするようにしています。
 
-ファイル名：python5-6.py
-\begin{codebox}{python5-6.py}
+ファイル名：python{\thesection}-6.py
+\begin{codebox}{python{\thesection}-6.py}
 \begin{listing}{1}
 i = 1
 total = 0
@@ -1463,8 +1463,8 @@ for文と配列を使って効率よく出力処理してみましょう。
 
 配列listを使って5科目を一覧表示してください。
 
-ファイル名：python6-1.py
-\begin{legbox}{python6-1.py}
+ファイル名：python{\thesection}-1.py
+\begin{legbox}{python{\thesection}-1.py}
 \begin{listing}{1}
 subjects = ["Mathematics","English","Social","Japanese",
 "Scientific"]
@@ -1493,8 +1493,8 @@ for文と配列を使ってデータ入力と出力を効率よく処理する�
 
 配列（リスト）を使って5科目を一覧表示し、科目の点数を配列scoresに入力して、一覧表示してください。
 
-ファイルpython6-1.pyをpython6-2.pyにコピーにして保存してください。
-\begin{legbox}{python6-2.py}
+ファイルpython{\thesection}-1.pyをpython{\thesection}-2.pyにコピーにして保存してください。
+\begin{legbox}{python{\thesection}-2.py}
 \begin{listing}{1}
 subjects = ["Mathematics","English","Social",
     "Japanese","Scientific"]
@@ -1566,8 +1566,8 @@ for文と配列、if文を組みああせて行う処理を学んでみましょ
 
 「凡例list-2」の繰り返しの中で得点が60点以上は”合格”、60点未満は”不合格”と表示するように変更してみましょう。
 
-ファイルpython6-2.pyをpython6-3.pyにコピーにして保存してください。
-\begin{legbox}{python6-3.py}
+ファイルpython{\thesection}-2.pyをpython{\thesection}-3.pyにコピーにして保存してください。
+\begin{legbox}{python{\thesection}-3.py}
 \begin{listing}{1}
 subjects = ["Mathematics","English","Social",
     "Japanese","Scientific"]
@@ -1577,7 +1577,7 @@ for s in subjects:
     y = int ( x )
     scores.append( y )
 
-for n in range(0,5):
+for n in range(5):
     if scores[n] >= 60:
         mes = "合格"
     else:
@@ -1595,7 +1595,7 @@ for n in range(0,5):
 
 エラーと表示された科目については「error」と出力します。
 
-python6-3.pyをファイル名「plactice9.py」として別名で保存しましょう。
+python{\thesection}-3.pyをファイル名「plactice9.py」として別名で保存しましょう。
 
 \begin{codebox}{実行例}
 \begin{verbatim}
@@ -1702,8 +1702,8 @@ students_scores[0].append(70)
 2次元配列の例で利用した{\tt students\_scores = [[60, 80], [70, 90], [80, 100]]}(数学と英語の点数)
 を使って科目の合計点を求めるプログラムを作成しましょう。
 
-ファイル名をpython6-4.pyとして保存してください。
-\begin{legbox}{python6-4.py}
+ファイル名をpython{\thesection}-4.pyとして保存してください。
+\begin{legbox}{python{\thesection}-4.py}
 \begin{listing}{1}
 students_scores = [[60, 80], [70, 90], [80, 100]]
 m = 0 #数学の合計点
@@ -1731,8 +1731,8 @@ print ("英語の合計点数", e)
 \begin{pabox}{list-5}
 添え字を使って前の凡例と同「list-4」じ機能を作ってみましょう。
 
-ファイル名をpython6-5.pyとして保存してください。
-\begin{legbox}{python6-5.py}
+ファイル名をpython{\thesection}-5.pyとして保存してください。
+\begin{legbox}{python{\thesection}-5.py}
 \begin{listing}{1}
 students_scores = [[60, 80], [70, 90], [80, 100]]
 m = 0 #数学の合計点
@@ -1794,7 +1794,7 @@ plactice9.pyをファイル名「plactice11.py」として別名で保存しま�
 
 \begin{codebox}{実行例}
 \begin{verbatim}
-c:\\～> python python11.py
+c:\\～> python plactice11.py
 1 人目の入力
 Mathematics = 20
 English = 30
@@ -1883,17 +1883,17 @@ Scientific の平均点 60.0
 \end{grabox}
 辞書データdictdataに日本の空港のレターコードをキーとして空港名を設定する
 \begin{pabox}{dict-1}
-\begin{codebox}{python8-1.py}
+\begin{codebox}{python{\thesection}-1.py}
 \begin{listing}{1}
-dictdata = {'CTS':'SHINCHITOSE', 'HKD':'HAKODATE', 
-    'HND':'TOKYOKOKUSAI', 'NRT':'NARITAKOKUSAI' }
+dictdata = {'CTS':'新千歳空港', 'HKD':'函館空港', 
+    'HND':'東京国際空港', 'NRT':'成田国際空港' }
 print(dictdata['CTS'])
    
 \end{listing}
 
 実行結果
 \begin{listing}{1}
-SHINCHITOSE
+'新千歳空港
 \end{listing}
 \end{codebox}
 \end{pabox}
@@ -1931,7 +1931,7 @@ JSONでは「\{\}」で囲まれた中に「,」カンマで複数の要素を�
 また「キー値」と格納する「値」を「：」コロンで区切ります。
 
 このまま連想配列やリストと同様の記述となりますので、pythonのdictオブジェクトとして利用することができます。
-\begin{codebox}{python8-2.py}
+\begin{codebox}{python{\thesection}-2.py}
 \begin{verbatim}
 AKJ⇒旭川空港
 MMB⇒女満別空港
@@ -1960,7 +1960,7 @@ HND⇒東京国際空港
 
 \begin{pabox}{json-2}
 2年3組　佐々木君の国社数理英のJSON表記は次のようになります。
-\begin{codebox}{python8-3.py}
+\begin{codebox}{python{\thesection}-3.py}
 \begin{listing}{1}
 json_data = {
   "class":"2年3組" ,
@@ -2028,8 +2028,8 @@ def 関数名(引数1,引数2):
 
 $y = x^2 + 2 x + 3$の２次方程式の値を求める関数funcを定義してxが２と４の時のyの値を求めるプログラムを作ります。
 
-ファイル名をpython9-1.pyとして保存してください。
-\begin{codebox}{python9-1.py}
+ファイル名をpython{\thesection}-1.pyとして保存してください。
+\begin{codebox}{python{\thesection}-1.py}
 \begin{listing}{1}
 def func(x):
     answer = x ** 2 + 2 * x + 3
@@ -2068,21 +2068,21 @@ $y = x^2 + 2 x + 3$の２次方程式の値を求める関数func1とxの値を0
 
 作ったプログラムで上記2次方程式の0から4まで整数代入した合計を求めます。
 
-ファイル名をpython9-2.pyとして保存してください。
+ファイル名をpython{\thesection}-2.pyとして保存してください。
 
-\begin{codebox}{python9-2.py}
+\begin{codebox}{python{\thesection}-2.py}
 \begin{listing}{1}
 def func1(x):
     answer = x ** 2 + 2 * x + 3
     return answer
-
+#1つ目の関数func1はここまで
 def func2(n):
 	t = 0
 	for i in range(n):
 		y = func1(i)
 		t = t + y
 	return t
-
+#2つ目の関数func2はここまで
 a = func2(5)
 print( a )
 \end{listing}
@@ -2156,8 +2156,8 @@ NameError: name 'x' is not defined
 \begin{pabox}{scope-1}
 凡例func-1の変数xをグローバルで利用し、$x^2 + 2 x + 3$の値をxにそれぞれ2と4を設定し、計算するプログラムを作ります。
 
-ファイル名python9-3.pyで保存してください。
-\begin{codebox}{python9-3.py}
+ファイル名python{\thesection}-3.pyで保存してください。
+\begin{codebox}{python{\thesection}-3.py}
 \begin{listing}{1}
 #引数にはなにも指定しません。
 def func():
@@ -2190,8 +2190,8 @@ print( y )
 \begin{pabox}{scope-2}
 グローバル変数xに2と4を代入して$y = x^2 + 2 x + 3$となる$y = f(x)$の$f(x)$を呼び出し結果を出力するプログラムを作成します。
 
-ファイル名python9-4.pyで保存してください。
-\begin{codebox}{python9-4.py}
+ファイル名python{\thesection}-4.pyで保存してください。
+\begin{codebox}{python{\thesection}-4.py}
 \begin{listing}{1}
 #スコープが異なれば同じ変数名が利用できます。
 def func(x):
@@ -2240,8 +2240,8 @@ print( y )
 テストでは80点以上を「excelent」とし、60点以上を「good」とし、40点以上を「passing」、40点未満を「failing」と評価する関数を記載します。100点を超えていたり0点未満の場合「error」という戻り値となり、点数を引数とする関数evaluationを作成しましょう。
 
 ※　Plactice9を関数evaluationを利用して記載することができます。
-ファイル名python9-5.pyとして保存してください。
-\begin{codebox}{python9-5.py}
+ファイル名python{\thesection}-5.pyとして保存してください。
+\begin{codebox}{python{\thesection}-5.py}
 \begin{listing}{1}
 def evaluation(score):
     if score < 0 or score > 100:
@@ -2365,8 +2365,8 @@ pythonでは時間や乱数機能の追加を行うことができます。
 \begin{pabox}{module-1}
 for文で10回繰り返しを行い、ライブラリを使って現在時刻、カウンターiの平方根$\sqrt{　i　}$や3乗根$\sqrt[3]{　i　}$を表示して、乱数で生成された1～3の数値の秒数を待ち時間とするプログラムを作成しましょう。
 
-ファイル名python9-1.pyとして保存してください。
-\begin{codebox}{python9-1.py}
+ファイル名python{\thesection}-1.pyとして保存してください。
+\begin{codebox}{python{\thesection}-1.py}
 \begin{listing}{1}
 #ライブラリを利用する場合import文で読み込みを行う
 import random
@@ -2422,8 +2422,8 @@ pip install Pillow
 
 最初に描画用の領域（サイズが500px,300px）を作成して表示してみましょう。
 
-ファイル名python9-2.pyとして保存してください。
-\begin{codebox}{python9-2.py}
+ファイル名python{\thesection}-2.pyとして保存してください。
+\begin{codebox}{python{\thesection}-2.py}
 \begin{listing}{1}
 #Pillowライブラリを利用する場合は名称PILを使う宣言が必要で、
 #import文で描画に必要なライブラリを指定する。
@@ -2438,8 +2438,8 @@ im.show() #イメージを表示する
 描画用のエリアに「$(50,50)-(150,50)$」と「$(50,100)-(150,150)$」の座標で白い線を引いてみましょう。
 
 
-ファイル名python9-3.pyとして保存してください。
-\begin{codebox}{python9-3.py}
+ファイル名python{\thesection}-3.pyとして保存してください。
+\begin{codebox}{python{\thesection}-3.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw #ImageDrawのインポートを追加する
 
@@ -2455,8 +2455,8 @@ im.show()
 
 それでは赤い線に変更してみましょう。
 
-ファイル名python9-4.pyとして保存してください。
-\begin{codebox}{python9-4.py}
+ファイル名python{\thesection}-4.pyとして保存してください。
+\begin{codebox}{python{\thesection}-4.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
 
@@ -2561,8 +2561,8 @@ polygon( 座標 , fill= , outline= )
 \begin{pabox}{pillow-2}
 図形を描画する凡例
 
-ファイル名python9-5.pyとして保存してください。
-\begin{codebox}{python9-5.py}
+ファイル名python{\thesection}-5.pyとして保存してください。
+\begin{codebox}{python{\thesection}-5.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
 
@@ -2591,8 +2591,8 @@ im.show()
 繰り返しを利用して図形を描画する凡例です。
 色や位置を変化させながら図形描画します。
 
-ファイル名python9-6.pyとして保存してください。
-\begin{codebox}{python9-6.py}
+ファイル名python{\thesection}-6.pyとして保存してください。
+\begin{codebox}{python{\thesection}-6.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw
 import time
@@ -2618,8 +2618,8 @@ im.show()
 プログラムで画像ファイルを指定して読み込むには画像ファイルがある場所を指し示すためにパスを指定します。
 現在プログラムの存在する場所からの相対で指定しますので、今回は「imagesample」フォルダー（ディレクトリ）内にある「sample01.jpg」を使ってみましょう。
 
-ファイル名python9-7.pyとして保存してください。
-\begin{codebox}{python9-7.py}
+ファイル名python{\thesection}-7.pyとして保存してください。
+\begin{codebox}{python{\thesection}-7.py}
 \begin{listing}{1}
 from PIL import Image
 
@@ -2633,8 +2633,8 @@ img.show()  # 画像表示
 
 さらに画像を30°回転させてみましょう。
 
-ファイル名python9-8.pyとして保存してください。
-\begin{codebox}{python9-8.py}
+ファイル名python{\thesection}-8.pyとして保存してください。
+\begin{codebox}{python{\thesection}-8.py}
 \begin{listing}{1}
 from PIL import Image
 
@@ -2652,7 +2652,7 @@ img.show()  # 画像表示
 
 プログラムでイメージ加工する場合に簡単にできそうなことをまとめてみました。
 
-\begin{codebox}{python9-8.py}
+\begin{codebox}{python{\thesection}-9.py}
 \begin{listing}{1}
 from PIL import Image,ImageDraw,ImageFilter
 
