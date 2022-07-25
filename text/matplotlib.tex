@@ -593,7 +593,7 @@ url = 'https://www.jma.go.jp/bosai/forecast/data/
 response = urllib.request.urlopen(url)
 content = json.loads(response.read().decode('utf8'))
 
-print(content["headlineText"])
+print(content["text"])
 
 \end{listing}
 実行結果(ある日の結果)
